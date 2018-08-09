@@ -1,0 +1,73 @@
+$primary-font: 'Barlow Semi Condensed', Helvetica, sans-serif;
+$primary-color: #fc671a;
+$secondary-color: #235e4d;
+
+body {
+    overflow-x: hidden;
+    font-family: $primary-font;
+    background: #efefef;
+}
+%site-btn,
+.site-btn{
+    min-width: 150px;
+    height: 50px;
+    line-height: 45px;
+    font-size: 21px;
+    letter-spacing: 0.01em;
+    border: 2px solid transparent;
+    display: inline-block;
+    text-align: center;
+    padding: 0;
+    outline: none;
+    transform: translateY(0px);
+    transition: all 250ms linear;
+    &:hover{
+        text-decoration: none;
+        transition: all 250ms linear;
+        transform: translateY(-2px);
+    }
+}
+.btn-orange{
+    @extend %site-btn;
+    border-color: $primary-color;
+    color: $primary-color;
+    &:hover{
+        color: #fff;
+        background: $primary-color;
+    }
+}
+.btn-green{
+    @extend %site-btn;
+    border-color: $secondary-color;
+    color: $secondary-color;
+    &:hover{
+        background: $secondary-color;
+        color: #fff;
+    }
+}
+
+%section-title{
+    font-size: 24px;
+    letter-spacing: 0.01em;
+    font-weight: 600;
+    padding-top: 50px;
+    padding-bottom: 48px;
+    text-align: center;
+}
+
+
+%heading-desc{
+    font-weight: 300;
+    font-size: 32px;
+    letter-spacing: 0.01em;
+    color: $secondary-color;
+    text-align: center;
+    width: 100%;
+    padding-left: 15px;
+}
+.btn-wrap-center {
+    text-align: center;
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 58px;
+}
