@@ -72,7 +72,7 @@
                 	 $custom_logo_id = get_theme_mod( 'custom_logo' );
 					         $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 					         ?>
-                    <a href="#">
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
                         <img class="img-fluid site-logo" src="<?php echo $image[0]; ?>" alt="logo">
                     </a>
                 </div>
