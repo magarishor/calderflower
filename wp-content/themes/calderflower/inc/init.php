@@ -10,6 +10,7 @@ $cf_includes = array(
 	'inc/widgets.php',
 	'inc/acf_options.php',
 	'inc/setup_site.php',
+	'inc/menu.php',
 	'inc/social-icon.php',
 	'inc/admin/init.php',
 

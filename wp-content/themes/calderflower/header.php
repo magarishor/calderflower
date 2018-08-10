@@ -33,25 +33,14 @@
 
         <div id="primary-menu" class="menu">
             <?php
-		    wp_nav_menu( array(
-              'menu'              => 'Primary',
-              'theme_location'    => '',
-              'depth'             => 0,
-              'container'         => '',
-              'container_class'   => '',
-              'container_id'      => '',
-              'menu_class'        => 'nav-menu',
-              'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-              'walker'            => new WP_Bootstrap_Navwalker())
-              );?>
+              menu_fetch('Top Menu','nav-menu');
+              ?>
         </div>
 
         <div class="contact-left">
-              <ul>
-                <li><a href="tel:0296989822"><i class="fas fa-phone"></i> 02 9698 9822 </a></li>
-                <li><a href="mailto: "><i class="fas fa-envelope"></i> Email Us </a></li>
-                <li><a href="#"><i class="fas fa-user"></i> Client Portal Login </a></li>
-              </ul>
+              <?php
+              menu_fetch('Secondary Menu','');
+              ?>
         </div>
          <?php cf_social_icons_output(); ?>
     </nav>
