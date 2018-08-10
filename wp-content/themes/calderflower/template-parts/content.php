@@ -182,8 +182,6 @@
     ── ──────────────────────────────────────────────────────────
     ── -->
 
-
-
     <div class="copyright-block">
         <div class="container">
             <div class="row">
@@ -193,9 +191,8 @@
             </div>
 
              <div class="col-6 d-flex justify-content-end align-items-center">
-                    <?php cf_social_icons_output(); ?>
+                <?php cf_social_icons_output(); ?>
             </div>
             </div>
         </div>
     </div>
-
