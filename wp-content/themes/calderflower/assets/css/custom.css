@@ -283,6 +283,10 @@ body {
 
 .form-map {
   position: relative; }
+  .form-map .col {
+    background: #fff; }
+  .form-map .gfield_description.validation_message {
+    color: #de182b; }
   .form-map:before {
     content: "";
     width: 20px;
@@ -337,7 +341,8 @@ body {
     .form-map .form-wrap input[type="submit"] {
       background: #fff;
       width: auto;
-      margin-top: 13px; }
+      margin-top: 13px;
+      cursor: pointer; }
 
 ::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */

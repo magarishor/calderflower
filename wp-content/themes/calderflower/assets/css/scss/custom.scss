@@ -303,6 +303,12 @@
 // form map
 .form-map{
     position: relative;
+    .col{
+        background: #fff;
+    }
+    .gfield_description.validation_message {
+        color: #de182b;
+    }
     &:before{
         content: "";
         width: 20px;
@@ -372,6 +378,7 @@
             background: #fff;
             width: auto;
             margin-top: 13px;
+            cursor: pointer;
         }
     }
 }
