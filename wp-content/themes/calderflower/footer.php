@@ -58,7 +58,7 @@ $('.slider-nav').slick({
       'Calder Flower Architects Pty Ltd'];
       // Info Window Content
       var infoWindowContent = [
-      '<div class="info_content">yes</div>'];
+      '<div class="info_content">Calder Flower Architects Pty Ltd</div>'];
 
       function initMap() {
         var bounds = new google.maps.LatLngBounds();
