@@ -153,8 +153,7 @@
 
                <!-- map -->
                 <div class="col">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.100207337743!2d151.19609431570316!3d-33.88707298065119!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12b1d7f13a5e6d%3A0x84538a52282d279d!2sCalder+Flower+Architects+Pty+Ltd!5e0!3m2!1sen!2snp!4v1533788912992"
-                     width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    <div id="map" style=" height: 500px; width: 100%;"></div>
                 </div>
 
             </div>
