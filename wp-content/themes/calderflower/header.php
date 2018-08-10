@@ -32,16 +32,13 @@
     <nav id="site-navigation" class="main-navigation" v-bind:class="{ shiftRight }">
 
         <div id="primary-menu" class="menu">
-            <?php
-              menu_fetch('Top Menu','nav-menu');
-              ?>
+            <?php menu_fetch('Top Menu','nav-menu'); ?>
         </div>
 
         <div class="contact-left">
-              <?php
-              menu_fetch('Secondary Menu','');
-              ?>
+            <?php menu_fetch('Secondary Menu',''); ?>
         </div>
+
          <?php cf_social_icons_output(); ?>
     </nav>
 
@@ -58,9 +55,9 @@
                 </div>
                 <div class="col-4 d-flex justify-content-center align-items-center">
                 	<?php
-                	 $custom_logo_id = get_theme_mod( 'custom_logo' );
-					         $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-					         ?>
+                	   $custom_logo_id = get_theme_mod( 'custom_logo' );
+					           $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+					           ?>
                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
                         <img class="img-fluid site-logo" src="<?php echo $image[0]; ?>" alt="logo">
                     </a>
