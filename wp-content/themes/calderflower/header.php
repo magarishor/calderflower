@@ -45,6 +45,14 @@
               'walker'            => new WP_Bootstrap_Navwalker())
               );?>
         </div>
+
+        <div class="contact-left">
+              <ul>
+                <li><a href="tel:0296989822"><i class="fas fa-phone"></i> 02 9698 9822 </a></li>
+                <li><a href="mailto: "><i class="fas fa-envelope"></i> Email Us </a></li>
+                <li><a href="#"><i class="fas fa-user"></i> Client Portal Login </a></li>
+              </ul>
+        </div>
          <?php cf_social_icons_output(); ?>
     </nav>
 
@@ -52,7 +60,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-4 d-flex align-items-center">
-                    <div id="dp-hamburger"  v-bind:class="{ change }" v-on:click="dpToggleMenu">
+                    <div id="dp-hamburger"  v-bind:class="{ change }" v-on:click="dpToggleMenu()">
                         <div class="bar1"></div>
                         <div class="bar2"></div>
                         <div class="bar3"></div>

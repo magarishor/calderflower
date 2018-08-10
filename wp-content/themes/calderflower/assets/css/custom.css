@@ -119,6 +119,14 @@ body {
       text-decoration: none;
       padding-bottom: 15px;
       display: inline-block; }
+  #site-navigation .contact-left ul li a {
+    color: #fc671a;
+    font-size: 21px;
+    letter-spacing: 0.01em;
+    font-weight: 500;
+    padding-left: 16px; }
+    #site-navigation .contact-left ul li a i {
+      padding-right: 5px; }
   #site-navigation.shiftRight {
     left: 0; }
 

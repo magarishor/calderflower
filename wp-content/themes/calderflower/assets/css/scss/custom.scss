@@ -25,6 +25,8 @@
         }
     }  
 }
+
+
 #dp-hamburger{
     display: inline-block;
     cursor: pointer;
@@ -71,6 +73,21 @@
                 text-decoration: none;
                 padding-bottom: 15px; 
                 display: inline-block;
+            }
+        }
+    }
+
+    .contact-left {
+        ul {
+            li a {
+                color: $primary-color;
+                font-size: 21px;
+                letter-spacing: 0.01em;
+                font-weight: 500;
+                padding-left: 16px; 
+                i{
+                    padding-right: 5px;
+                }
             }
         }
     }
