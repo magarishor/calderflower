@@ -38,7 +38,7 @@
       ?>
     <div class="container home-banner">
         <div class="row no-gutters">
-            <div class="col-6">
+            <div class="col-lg-6">
                 <div class="slider-for">
             	<?php
             		foreach( $homesliders as $homeslider ){
@@ -49,7 +49,7 @@
                     <?php }?>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-lg-6">
             <div class="right-banner">
                 <div class="right-top-sldr slider-nav">
                 	<?php
@@ -145,14 +145,14 @@
             <div class="row no-gutters">
 
                 <!-- Form -->
-                <div class="col">
+                <div class="col-lg-6">
                     <div class="form-wrap">
                        <?php echo $letstalk['cf_home_leave_us_an_enquiry_form'];?>
                     </div>
                 </div>
 
                <!-- map -->
-                <div class="col">
+                <div class="col-lg-6">
                     <div id="map" style=" height: 500px; width: 100%;"></div>
                 </div>
 
@@ -184,12 +184,12 @@
     <div class="copyright-block">
         <div class="container">
             <div class="row">
-                <div class="col-6">
+                <div class="col-lg-6">
                 <?php $copyright = get_theme_mod( 'footer_copyright_setting' );?>
                 <p><?php echo $copyright;?></p>
             </div>
 
-             <div class="col-6 d-flex justify-content-end align-items-center">
+             <div class="col-lg-6 d-flex justify-content-end align-items-center">
                 <?php cf_social_icons_output(); ?>
             </div>
             </div>

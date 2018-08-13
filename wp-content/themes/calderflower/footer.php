@@ -50,7 +50,7 @@ $('.slider-nav').slick({
 });
 </script>
 
- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAobGcvGSn_MUMWk1SvEKn4h7rS3YlmsVI&callback=initMap"></script>
+ <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhgZEZLKCLOBawajpWrUqw6exsSJOeDI8&callback=initMap"></script>
 
     <script>
       var map;

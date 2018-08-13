@@ -147,6 +147,9 @@
 
 
 // Banner Slider
+.home-banner {
+    margin-top: 20px;
+}
 .right-banner{
     margin-left: 10px;
     .slider-nav{
@@ -182,6 +185,7 @@
             font-size: 0;
             right: 30px;
             li{
+                list-style: none;
                 &.slick-active button,button:hover{
                     background: $primary-color;
                 }
@@ -195,6 +199,7 @@
                     border-radius: 50%;
                     cursor: pointer;
                     outline: none;
+                    padding: 0;
                 }
             }
         }
