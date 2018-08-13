@@ -248,7 +248,8 @@ body {
     color: #fc671a; }
   .arrow-text p {
     padding-top: 0px;
-    line-height: 1.3; }
+    line-height: 1.3;
+    color: #293834; }
 
 .featured-work {
   background: #fff; }
