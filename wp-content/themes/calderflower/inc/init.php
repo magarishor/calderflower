@@ -1,6 +1,7 @@
 <?php
 // Load all required files
 $cf_includes = array(
+	'inc/cf_function_def.php',
 	'inc/custom-header.php',
 	'inc/template-tags.php',
 	'inc/template-functions.php',

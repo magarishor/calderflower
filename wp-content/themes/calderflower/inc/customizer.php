@@ -39,24 +39,14 @@ function theme_option_customizer($wp_customize){
  		));
 
 
-	//contact ->text
-	$wp_customize->add_setting('header_address_setting', array(
+	//contact/footer ->map api key
+	$wp_customize->add_setting('site_map_setting', array(
  	'default'        => '',
  	));
-	$wp_customize->add_control('header_address_setting', array(
- 	'label'   => 'Contact',
+	$wp_customize->add_control('site_map_setting', array(
+ 	'label'   => 'Google maps api key',
   	'section' => 'theme_settings_section',
- 	'type'    => 'text',
-	));
-
-	//contact ->email
-	$wp_customize->add_setting('header_email_setting', array(
- 	'default'        => '',
- 	));
-	$wp_customize->add_control('header_email_setting', array(
- 	'label'   => 'Email Address',
-  	'section' => 'theme_settings_section',
- 	'type'    => 'text',
+ 	'type'    => 'textarea',
 	));
 
 	//contact ->email
