@@ -12,18 +12,14 @@
     <?php
         get_template_part( 'template-parts/home/content', 'slider' );?>
 
-
     <?php
         get_template_part( 'template-parts/home/content', 'featuredwork' );?>
-
 
     <?php
         get_template_part( 'template-parts/home/content', 'letstalk' );?>
 
-
     <?php
         get_template_part( 'template-parts/home/content', 'instagram' );?>
-
 
     <?php
         get_template_part( 'template-parts/home/content', 'copyright' );?>

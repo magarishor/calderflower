@@ -3,4 +3,23 @@
         max-width: 1366px;
     }
 }
+
+@media (max-width: 480px) {
+    #site-wrapper.shiftRight {
+        left: 315px;
+    }
+    .featured-work .col-lg-4 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .work-block .work-image {
+        height: 185px;
+        width: 100%;
+    }
+    .featured-work .col-lg-4 .work-block {
+        margin-right: 13px;
+    }
+}
     

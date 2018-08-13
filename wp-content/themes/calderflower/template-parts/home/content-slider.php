@@ -27,7 +27,7 @@
         wp_reset_postdata();
       ?>
 <div class="row no-gutters">
-            <div class="col-6">
+            <div class="col-lg-6">
                 <div class="slider-for">
             	<?php
             		foreach( $homesliders as $homeslider ){
@@ -38,7 +38,7 @@
                     <?php }?>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-lg-6">
             <div class="right-banner">
                 <div class="right-top-sldr slider-nav">
                 	<?php

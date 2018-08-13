@@ -13,14 +13,14 @@
         <div class="row no-gutters">
 
             <!-- Form -->
-            <div class="col">
+            <div class="col-lg-6">
                 <div class="form-wrap">
                    <?php echo $letstalk['cf_home_leave_us_an_enquiry_form'];?>
                 </div>
             </div>
 
            <!-- map -->
-            <div class="col">
+            <div class="col-lg-6">
                 <div id="map" style=" height: 500px; width: 100%;"></div>
             </div>
 
