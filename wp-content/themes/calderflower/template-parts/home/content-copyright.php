@@ -10,10 +10,7 @@
                 <div class="col-lg-7">
                 <?php $copyright = get_theme_mod( 'footer_copyright_setting' );?>
                 <p><?php echo $copyright;?></p>
-                <ul class="footer-links">
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
-                </ul>
+                <?php menu_fetch('Footer Menu','footer-links'); ?>
             </div>
 
              <div class="col-lg-5 d-flex justify-content-end align-items-center">
