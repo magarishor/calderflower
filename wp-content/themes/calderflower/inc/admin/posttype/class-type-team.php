@@ -1,6 +1,5 @@
 <?php
-
-// Custom post type - testimonial.
+// Custom post type - team.
 class CF_Type_Milestone {
 
 	public function __construct() {
@@ -9,7 +8,7 @@ class CF_Type_Milestone {
 	}
 
 	/**
-	 * Register a testimonial post type.
+	 * Register a team post type.
 	 */
 	public function calder_flower_team_init() {
 		$labels = array(
@@ -17,7 +16,7 @@ class CF_Type_Milestone {
 			'singular_name'      => _x( 'Team', 'post type singular name', 'calderflower' ),
 			'menu_name'          => _x( 'Team', 'admin menu', 'calderflower' ),
 			'name_admin_bar'     => _x( 'Team', 'add new on admin bar', 'calderflower' ),
-			'add_new'            => _x( 'Add New', 'testimonial', 'calderflower' ),
+			'add_new'            => _x( 'Add New', 'team', 'calderflower' ),
 			'add_new_item'       => __( 'Add New Team', 'calderflower' ),
 			'new_item'           => __( 'New Team', 'calderflower' ),
 			'edit_item'          => __( 'Edit Team', 'calderflower' ),

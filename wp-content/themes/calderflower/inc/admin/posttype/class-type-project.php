@@ -1,6 +1,6 @@
 <?php
 
-// Custom post type - testimonial.
+// Custom post type - project.
 class CF_Type_Project {
 
 	public function __construct() {
@@ -9,7 +9,7 @@ class CF_Type_Project {
 	}
 
 	/**
-	 * Register a testimonial post type.
+	 * Register a project post type.
 	 */
 	public function calder_flower_project_init() {
 		$labels = array(
@@ -17,7 +17,7 @@ class CF_Type_Project {
 			'singular_name'      => _x( 'Project', 'post type singular name', 'calderflower' ),
 			'menu_name'          => _x( 'Projects', 'admin menu', 'calderflower' ),
 			'name_admin_bar'     => _x( 'Project', 'add new on admin bar', 'calderflower' ),
-			'add_new'            => _x( 'Add New', 'testimonial', 'calderflower' ),
+			'add_new'            => _x( 'Add New', 'project', 'calderflower' ),
 			'add_new_item'       => __( 'Add New Project', 'calderflower' ),
 			'new_item'           => __( 'New Project', 'calderflower' ),
 			'edit_item'          => __( 'Edit Project', 'calderflower' ),
@@ -31,14 +31,14 @@ class CF_Type_Project {
 
 		$args = array(
 			'labels'             => $labels,
-			'public'             => false,
-			'publicly_queryable' => false,
+			'public'             => true,
+			'publicly_queryable' => true,
 			'show_ui'            => true,
 			'show_in_menu'       => true,
 			'query_var'          => true,
 			'rewrite'            => array( 'slug' => 'project' ),
 			'capability_type'    => 'post',
-			'has_archive'        => false,
+			'has_archive'        => true,
 			'hierarchical'       => false,
 			'menu_position'      => null,
 			'supports'           => array( 'title', 'editor', 'thumbnail', ),
