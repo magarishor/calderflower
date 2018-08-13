@@ -1,5 +1,4 @@
 @import 'base';
-
 // HEADER
 #header{
     font-weight: 300;
@@ -71,7 +70,7 @@
                 letter-spacing: 0.01em;
                 font-weight: 300;
                 text-decoration: none;
-                padding-bottom: 15px; 
+                padding-bottom: 9px; 
                 display: inline-block;
             }
         }
@@ -87,6 +86,23 @@
                 padding-left: 16px; 
                 i{
                     padding-right: 5px;
+                    background: $primary-color;
+                    border-radius: 4px;
+                    font-size: 14px;
+                    padding: 3px;
+                    color: #333;
+                    position: relative;
+                    top: -2px;
+                    margin-right: 6px;
+                    &.fa-user{
+                         background: transparent;
+                         color: $primary-color;
+                         font-size: 20px;
+                         position: relative;
+                         left: -2px;
+                         margin-right: 2px;
+
+                    }
                 }
             }
         }
@@ -102,6 +118,14 @@
     z-index: 11;
     &.shiftRight{
         left: 0;
+    }
+
+    #top-social{
+        margin-left: 18px;
+        margin-top: 30px;
+    }
+    #menu-secondary-menu{
+        margin-top: 20px;
     }
 }
 #site-wrapper{

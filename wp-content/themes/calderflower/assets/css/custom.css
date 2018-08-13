@@ -118,7 +118,7 @@ body {
       letter-spacing: 0.01em;
       font-weight: 300;
       text-decoration: none;
-      padding-bottom: 15px;
+      padding-bottom: 9px;
       display: inline-block; }
   #site-navigation .contact-left ul li a {
     color: #fc671a;
@@ -127,9 +127,29 @@ body {
     font-weight: 500;
     padding-left: 16px; }
     #site-navigation .contact-left ul li a i {
-      padding-right: 5px; }
+      padding-right: 5px;
+      background: #fc671a;
+      border-radius: 4px;
+      font-size: 14px;
+      padding: 3px;
+      color: #333;
+      position: relative;
+      top: -2px;
+      margin-right: 6px; }
+      #site-navigation .contact-left ul li a i.fa-user {
+        background: transparent;
+        color: #fc671a;
+        font-size: 20px;
+        position: relative;
+        left: -2px;
+        margin-right: 2px; }
   #site-navigation.shiftRight {
     left: 0; }
+  #site-navigation #top-social {
+    margin-left: 18px;
+    margin-top: 30px; }
+  #site-navigation #menu-secondary-menu {
+    margin-top: 20px; }
 
 #site-wrapper {
   transition: .3s;
