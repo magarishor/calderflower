@@ -1,0 +1,4 @@
+databasename : dev7naph_calder_flower
+
+u: dev7naph_calder
+p: $4vdUpz#hf7*

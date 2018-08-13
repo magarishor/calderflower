@@ -35,7 +35,7 @@ $('.slider-nav').slick({
 });
 </script>
 
- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAobGcvGSn_MUMWk1SvEKn4h7rS3YlmsVI&callback=initMap"></script>
+ <script async defer src="https://maps.googleapis.com/maps/api/js?key=<?php echo get_theme_mod( 'site_map_setting' ); ?>&callback=initMap"></script>
   <?php
     $maps = get_field( 'cf_home_lets_talk', 9 );
     ?>
@@ -46,7 +46,6 @@ $('.slider-nav').slick({
     // Info Window Content
     var infoWindowContent = [
     '<div class="info_content"><?php echo $maps[ 'cf_home_maps_information' ];?></div>'];
-
     function initMap() {
       var bounds = new google.maps.LatLngBounds();
       geocoder = new google.maps.Geocoder();

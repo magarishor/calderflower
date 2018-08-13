@@ -24,8 +24,8 @@ class CF_Type_Slider {
 			'all_items'          => __( 'All Sliders', 'calderflower' ),
 			'search_items'       => __( 'Search Sliders', 'calderflower' ),
 			'parent_item_colon'  => __( 'Parent Sliders:', 'calderflower' ),
-			'not_found'          => __( 'No testimonials found.', 'calderflower' ),
-			'not_found_in_trash' => __( 'No testimonials found in Trash.', 'calderflower' )
+			'not_found'          => __( 'No sliders found.', 'calderflower' ),
+			'not_found_in_trash' => __( 'No sliders found in Trash.', 'calderflower' )
 		);
 
 		$args = array(

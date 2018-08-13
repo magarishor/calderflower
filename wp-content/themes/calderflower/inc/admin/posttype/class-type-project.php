@@ -25,8 +25,8 @@ class CF_Type_Project {
 			'all_items'          => __( 'All Projects', 'calderflower' ),
 			'search_items'       => __( 'Search Projects', 'calderflower' ),
 			'parent_item_colon'  => __( 'Parent Projects:', 'calderflower' ),
-			'not_found'          => __( 'No testimonials found.', 'calderflower' ),
-			'not_found_in_trash' => __( 'No testimonials found in Trash.', 'calderflower' )
+			'not_found'          => __( 'No projects found.', 'calderflower' ),
+			'not_found_in_trash' => __( 'No projects found in Trash.', 'calderflower' )
 		);
 
 		$args = array(

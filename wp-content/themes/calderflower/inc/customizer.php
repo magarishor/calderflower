@@ -38,6 +38,17 @@ function theme_option_customizer($wp_customize){
   		'priority'    => 25,
  		));
 
+
+	//contact/footer ->map api key
+	$wp_customize->add_setting('site_map_setting', array(
+ 	'default'        => '',
+ 	));
+	$wp_customize->add_control('site_map_setting', array(
+ 	'label'   => 'Google maps api key',
+  	'section' => 'theme_settings_section',
+ 	'type'    => 'textarea',
+	));
+
 	//contact ->email
 	$wp_customize->add_setting('footer_copyright_setting', array(
  	'default'        => '',

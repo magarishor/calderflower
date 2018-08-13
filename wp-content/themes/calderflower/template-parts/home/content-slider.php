@@ -1,3 +1,9 @@
+<!-- ──
+    ── ──────────────────────────────────────────────────────────
+    ──   ::::::Banner Sldier : :  :   :    :     :        :   :
+    ── ──────────────────────────────────────────────────────────
+    ── -->
+<div class="container home-banner">
 <?php
         $args = array(
           'post_type'=>'slider',
@@ -61,3 +67,13 @@
             </div>
             </div>
         </div>
+
+         <!-- Bottom Banner Arrow Text -->
+
+        <div class="row">
+            <div class="arrow-text">
+                <i class="fas fa-chevron-down"></i>
+                <p><?php the_content();?></p>
+            </div>
+        </div>
+    </div>

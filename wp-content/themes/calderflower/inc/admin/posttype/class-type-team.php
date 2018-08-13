@@ -1,7 +1,7 @@
 <?php
 
 // Custom post type - testimonial.
-class CF_Type_Team {
+class CF_Type_Milestone {
 
 	public function __construct() {
 		add_action( 'init', array( &$this, 'calder_flower_team_init' ) );
@@ -25,8 +25,8 @@ class CF_Type_Team {
 			'all_items'          => __( 'All Team', 'calderflower' ),
 			'search_items'       => __( 'Search Team', 'calderflower' ),
 			'parent_item_colon'  => __( 'Parent Team:', 'calderflower' ),
-			'not_found'          => __( 'No testimonials found.', 'calderflower' ),
-			'not_found_in_trash' => __( 'No testimonials found in Trash.', 'calderflower' )
+			'not_found'          => __( 'No team found.', 'calderflower' ),
+			'not_found_in_trash' => __( 'No team found in Trash.', 'calderflower' )
 		);
 
 		$args = array(
@@ -41,7 +41,7 @@ class CF_Type_Team {
 			'has_archive'        => false,
 			'hierarchical'       => false,
 			'menu_position'      => null,
-			'supports'           => array( 'title', 'thumbnail', ),
+			'supports'           => array( 'title', 'editor', 'thumbnail', ),
 			// 'menu_icon'			 => 'dashicons-slides',
 		);
 
@@ -78,4 +78,4 @@ class CF_Type_Team {
 }
 
 // Run!
-new CF_Type_Team();
+new CF_Type_Milestone();
