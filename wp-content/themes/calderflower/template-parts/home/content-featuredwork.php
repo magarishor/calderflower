@@ -29,10 +29,10 @@
 
 			?>
             <div class="col-lg-4">
-                <div class="work-block">
+                <div class="work-block"  onclick="">
                     <img src="<?php echo $img[0];?>" alt="Avatar" class="img-fluid work-image">
                     <div class="work-middle">
-                        <p> <span><?php echo get_field( 'projects_subtitle' );?> </span> |  <?php the_title();?></p>
+                        <p> <span><?php echo get_field( 'projects_subtitle' );?> </span>  <?php the_title();?></p>
                         <a href="<?php the_permalink();?>" class="work-btn site-btn btn-orange">View Work</a>
                     </div>
                 </div>

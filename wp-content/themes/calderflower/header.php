@@ -23,13 +23,13 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="site-wrapper" v-bind:class="{ shiftRight }">
+<div id="site-wrapper" ">
     <!-- ──
     ── ──────────────────────────────────────────────────────────
     ──   :::::: Header Section : :  :   :    :     :        :   :
     ── ──────────────────────────────────────────────────────────
     ── -->
-    <nav id="site-navigation" class="main-navigation" v-bind:class="{ shiftRight }">
+    <nav id="site-navigation" class="main-navigation">
 
         <div id="primary-menu" class="menu">
             <?php menu_fetch('Top Menu','nav-menu'); ?>
@@ -46,11 +46,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-2 d-flex align-items-center">
-                    <div id="dp-hamburger"  v-bind:class="{ change }" v-on:click="dpToggleMenu()">
+                    <div id="dp-hamburger"  onclick="dpToggleMenu(this)">
                         <div class="bar1"></div>
                         <div class="bar2"></div>
                         <div class="bar3"></div>
-                        <span id="menu-text"> {{ menu }}</span>
+                        <span id="menu-text">Menu</span>
                     </div>
                 </div>
                 <div class="col-8 d-flex justify-content-center align-items-center">
