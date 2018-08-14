@@ -1,6 +1,6 @@
 <?php
 
-// Custom post type - testimonial.
+// Custom post type - slider.
 class CF_Type_Slider {
 
 	public function __construct() {
@@ -8,7 +8,7 @@ class CF_Type_Slider {
 	}
 
 	/**
-	 * Register a testimonial post type.
+	 * Register a slider post type.
 	 */
 	public function calder_flower_slider_init() {
 		$labels = array(
@@ -16,7 +16,7 @@ class CF_Type_Slider {
 			'singular_name'      => _x( 'Slider', 'post type singular name', 'calderflower' ),
 			'menu_name'          => _x( 'Sliders', 'admin menu', 'calderflower' ),
 			'name_admin_bar'     => _x( 'Slider', 'add new on admin bar', 'calderflower' ),
-			'add_new'            => _x( 'Add New', 'testimonial', 'calderflower' ),
+			'add_new'            => _x( 'Add New', 'slider', 'calderflower' ),
 			'add_new_item'       => __( 'Add New Slider', 'calderflower' ),
 			'new_item'           => __( 'New Slider', 'calderflower' ),
 			'edit_item'          => __( 'Edit Slider', 'calderflower' ),
