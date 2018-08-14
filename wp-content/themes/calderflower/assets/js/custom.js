@@ -24,7 +24,7 @@ jQuery(function($){
     });
 
     //body shift
-    // if ($(window).width() > 1366) {
+    if ($(window).width() > 1366) {
         var container_off = $("#header .container").offset().left;
         var get_diff = 315 - container_off;
 
@@ -45,7 +45,33 @@ jQuery(function($){
                 console.log(get_diff);
 
             });
-    // }
+    }
+
+     var is_chrome = !!window.chrome && !is_opera;
+     var is_explorer = typeof document !== 'undefined' && !!document.documentMode && !isEdge;
+     var is_firefox = typeof window.InstallTrigger !== 'undefined';
+     var is_safari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+     var is_opera = !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+
+     if (is_safari){
+          jQuery.fn.clickToggle = function (a, b) {
+              function cb() {
+                  [b, a][this._tog ^= 1].call(this);
+              }
+              return this.on("click", cb);
+          };
+          $('#dp-hamburger').clickToggle(function () {
+                  $("#site-wrapper").css("left", get_diff + 90);
+                  console.log(get_diff);
+                  $("#header , #site-wrapper").css("left", "315px");
+              },
+              function () {
+                  $("#site-wrapper").css("left", 0);
+                  $("#header , #site-wrapper").css("left", "0");
+                  console.log(get_diff);
+
+              });
+     }
 
     // Home Banner Slider
     $('.slider-for').slick({
