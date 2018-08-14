@@ -24,7 +24,7 @@ jQuery(function($){
     });
 
     //body shift
-    // if ($(window).width() > 1366) {
+    if ($(window).width() > 1366) {
         var container_off = $("#header .container").offset().left;
         var get_diff = 315 - container_off;
 
@@ -45,7 +45,7 @@ jQuery(function($){
                 console.log(get_diff);
 
             });
-    // }
+    }
 
     // Home Banner Slider
     $('.slider-for').slick({
