@@ -24,7 +24,7 @@ jQuery(function($){
     });
 
     //body shift
-    if ($(window).width() > 1366) {
+    // if ($(window).width() > 1366) {
         var container_off = $("#header .container").offset().left;
         var get_diff = 315 - container_off;
 
@@ -37,13 +37,29 @@ jQuery(function($){
         $('#dp-hamburger').clickToggle(function () {
                 $("#site-wrapper").css("left", get_diff + 90);
                 console.log(get_diff);
+                $("#header").css("position", "absolute");
             },
             function () {
                 $("#site-wrapper").css("left", 0);
+                $("#header").css("position", "fixed");
                 console.log(get_diff);
 
             });
-    }
+    // }
 
- 
+    // Home Banner Slider
+    $('.slider-for').slick({
+        slidesToShow: 1,
+        arrows: false,
+        fade: false,
+        asNavFor: '.slider-nav'
+    });
+    $('.slider-nav').slick({
+        slidesToShow: 1,
+        asNavFor: '.slider-for',
+        dots: true,
+        arrows: false,
+        focusOnSelect: true,
+        fade: false
+    });
 });

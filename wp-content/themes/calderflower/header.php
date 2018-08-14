@@ -45,7 +45,7 @@
     <div id="header">
         <div class="container">
             <div class="row">
-                <div class="col-4 d-flex align-items-center">
+                <div class="col-2 d-flex align-items-center">
                     <div id="dp-hamburger"  v-bind:class="{ change }" v-on:click="dpToggleMenu()">
                         <div class="bar1"></div>
                         <div class="bar2"></div>
@@ -53,7 +53,7 @@
                         <span id="menu-text"> {{ menu }}</span>
                     </div>
                 </div>
-                <div class="col-4 d-flex justify-content-center align-items-center">
+                <div class="col-8 d-flex justify-content-center align-items-center">
                 	<?php
                 	   $custom_logo_id = get_theme_mod( 'custom_logo' );
 					           $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
@@ -62,8 +62,9 @@
                         <img class="img-fluid site-logo" src="<?php echo $image[0]; ?>" alt="logo">
                     </a>
                 </div>
-                <div class="col-4 d-flex justify-content-end align-items-center">
+                <div class="col-2 d-flex justify-content-end align-items-center">
                   <?php cf_social_icons_output(); ?>
+                  <a class="mbl-call" href="tel:50050"> <img src="<?php echo get_stylesheet_directory_uri()?>/assets/img/call-img.png" alt=""> </a>
                 </div>
             </div>
         </div>

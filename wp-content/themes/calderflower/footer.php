@@ -15,25 +15,6 @@
 
 <?php wp_footer();?>
 
-<script>
-jQuery(document).ready(function($){
-// Home Banner Slider
-$('.slider-for').slick({
-    slidesToShow: 1,
-    arrows: false,
-    fade: false,
-    asNavFor: '.slider-nav'
-});
-$('.slider-nav').slick({
-    slidesToShow: 1,
-    asNavFor: '.slider-for',
-    dots: true,
-    arrows: false,
-    focusOnSelect: true,
-    fade: true
-});
-});
-</script>
 
  <script async defer src="https://maps.googleapis.com/maps/api/js?key=<?php echo get_theme_mod( 'site_map_setting' ); ?>&callback=initMap"></script>
   <?php
