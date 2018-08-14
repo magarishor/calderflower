@@ -13,7 +13,7 @@ function calderflower_scripts() {
 	wp_enqueue_script('jquery', get_template_directory_uri() . '/assets/js/jquery.js', array('jquery') , '4.0.0');
 	wp_enqueue_script('bootstrap-jquery', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery') , '4.0.0');
 	wp_enqueue_script('slick-min-jquery', get_template_directory_uri() . '/assets/js/slick.min.js', array('jquery') , '4.0.0');
-	wp_enqueue_script('vue-jquery', get_template_directory_uri() . '/assets/js/vue.js');
+	// wp_enqueue_script('vue-jquery', get_template_directory_uri() . '/assets/js/vue.js');
 	wp_enqueue_script( 'script-name', get_template_directory_uri() . '/assets/js/custom.js', array(), '1.0.0', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

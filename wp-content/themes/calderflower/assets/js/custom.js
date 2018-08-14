@@ -1,21 +1,21 @@
-const abc = new Vue({
-    el: "#site-wrapper",
-    data: {
-        shiftRight: false,
-        change: false,
-        menu : "Menu"
-    },
-    methods: {
-        dpToggleMenu(){
-            this.shiftRight = !this.shiftRight;
-            this.change = !this.change;
-            this.menu = this.change ? 'Close' : 'Menu' ;
-        }
-    }
-})
-
 
 jQuery(function($){
+     // Home Banner Slider
+     $('.slider-for').slick({
+         slidesToShow: 1,
+         arrows: false,
+         fade: false,
+         asNavFor: '.slider-nav'
+     });
+     $('.slider-nav').slick({
+         slidesToShow: 1,
+         asNavFor: '.slider-for',
+         dots: true,
+         arrows: false,
+         focusOnSelect: true,
+         fade: false
+     });
+     
     // scroll down
     $(".fa-chevron-down").click(function () {
         $("html,body").animate({
@@ -73,19 +73,35 @@ jQuery(function($){
               });
      }
 
-    // Home Banner Slider
-    $('.slider-for').slick({
-        slidesToShow: 1,
-        arrows: false,
-        fade: false,
-        asNavFor: '.slider-nav'
-    });
-    $('.slider-nav').slick({
-        slidesToShow: 1,
-        asNavFor: '.slider-for',
-        dots: true,
-        arrows: false,
-        focusOnSelect: true,
-        fade: false
-    });
+   
 });
+
+
+    function dpToggleMenu(x) {
+        x.classList.toggle("change");
+        document.getElementById("site-navigation").classList.toggle("shiftRight");
+        document.getElementById("site-wrapper").classList.toggle("shiftRight");
+        // text toggle
+        var x = document.getElementById("menu-text");
+        if (x.innerHTML === "Menu") {
+            x.innerHTML = "Close";
+        } else {
+            x.innerHTML = "Menu";
+        }
+    }
+
+// const abc = new Vue({
+//     el: "#site-wrapper",
+//     data: {
+//         shiftRight: false,
+//         change: false,
+//         menu: "Menu"
+//     },
+//     methods: {
+//         dpToggleMenu: function () {
+//              this.shiftRight = !this.shiftRight;
+//              this.change = !this.change;
+//              this.menu = this.change ? 'Close' : 'Menu';
+//         }
+//     }
+// })

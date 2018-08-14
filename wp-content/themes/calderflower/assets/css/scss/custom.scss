@@ -200,6 +200,8 @@
             right: 0;
             font-size: 0;
             right: 30px;
+            transform: translateY(-50%);
+            top: 50%;
             li{
                 list-style: none;
                 &.slick-active button,button:hover{
@@ -366,6 +368,9 @@
     position: relative;
     padding-top: 22px;
     padding-bottom: 66px;
+    .row{
+        background: #fff;
+    }
     .col{
         background: #fff;
     }
@@ -489,6 +494,7 @@
         @extend %section-title;
         color: $primary-color;
         padding-bottom: 18px;
+        margin-bottom: 17px;
     }
 }
 
@@ -545,5 +551,31 @@
     content: "|";
     font-weight: 300;
 }
+.validation_error {
+    color: #de182b;
+    margin: 15px 0;
+    margin-top: 20px;
+}
+.form-map .form-wrap .gform_confirmation_message {
+    color: #3c763d;
+    font-size: 18px;
+}
+
+#sb_instagram.sbi_col_6 #sbi_images .sbi_item {
+    padding: 5px !important;
+}
+#sb_instagram.sbi_col_6 #sbi_images .sbi_item:first-child {
+    padding-left: 0 !important;
+}
+
+#sb_instagram.sbi_col_6 #sbi_images .sbi_item:last-child {
+    padding-right: 0 !important;
+}
+
+#sbi_images {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
 // RESPONSIVE
 @import 'media';
