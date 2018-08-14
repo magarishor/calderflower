@@ -5,7 +5,8 @@
 }
 
 
-.mbl-call{
+.mbl-call,
+.copyright-block p br{
     display: none;
 }
 @media (max-width: 480px) {
@@ -131,6 +132,11 @@
         font-size: 16px;
         text-align: center;
         margin-top: 40px;
+        width: 100%;
+        justify-content: center;
+    }
+    .copyright-block p br {
+        display: block;
     }
     .copyright-block .footer-links {
         float: none;
@@ -146,6 +152,15 @@
         text-align: center;
         padding-bottom: 40px;
         padding-top: 8px;
+    }
+    .arrow-text {
+        margin-top: 28px;
+    }
+    .form-map .btn-wrap-center {
+        margin-bottom: 50px;
+    }
+    .arrow-text .fas {
+        margin-bottom: 40px;
     }
 }
     

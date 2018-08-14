@@ -468,7 +468,8 @@ body {
 @media (min-width: 1366px) {
   .container {
     max-width: 1366px; } }
-.mbl-call {
+.mbl-call,
+.copyright-block p br {
   display: none; }
 
 @media (max-width: 480px) {
@@ -592,7 +593,12 @@ body {
   .copyright-block p {
     font-size: 16px;
     text-align: center;
-    margin-top: 40px; }
+    margin-top: 40px;
+    width: 100%;
+    justify-content: center; }
+
+  .copyright-block p br {
+    display: block; }
 
   .copyright-block .footer-links {
     float: none;
@@ -607,6 +613,15 @@ body {
     padding-left: 0;
     text-align: center;
     padding-bottom: 40px;
-    padding-top: 8px; } }
+    padding-top: 8px; }
+
+  .arrow-text {
+    margin-top: 28px; }
+
+  .form-map .btn-wrap-center {
+    margin-bottom: 50px; }
+
+  .arrow-text .fas {
+    margin-bottom: 40px; } }
 
 /*# sourceMappingURL=custom.css.map */
