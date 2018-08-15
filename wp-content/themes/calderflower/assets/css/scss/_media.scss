@@ -5,8 +5,10 @@
     #header .container,
     .copyright-block .container,
     .instagram-block .container,
+    .container.project-banner,
     .form-map .container,
-    .container.home-banner
+    .container.home-banner,
+    .project-filter .container
     {
         padding-left: 0;
         padding-right: 0;
@@ -41,10 +43,20 @@
     }
     .copyright-block .footer-links {
         float: left;
+        display: flex;
+        width: 100%;
+        position: relative;
+        left: -4px;
     }
     #top-social {
         width: 100%;
         padding-left: 4px;
+    }
+    .copyright-block #top-social{
+    display: flex;
+    width: 100%;
+    position: relative;
+    left: -4px;
     }
 }
 
@@ -56,7 +68,25 @@
 @media (max-width:768px){
     .copyright-block p {
         font-size: 16px;
+        margin-top: 10px;
     }
+    .copyright-block .footer-links li a {
+        font-size: 16px;
+    }
+    .copyright-block {
+        height: auto;
+    }
+    .copyright-block #top-social {
+        padding-bottom: 15px;
+    }
+    .copyright-block .footer-links li a {
+        padding-top: 0;
+    }
+    #header #top-social {
+        left: -15px;
+        position: relative;
+    }
+    
 }
 @media (max-width: 480px) {
     #site-wrapper.shiftRight {
