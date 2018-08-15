@@ -3,7 +3,7 @@
  * Enqueue scripts and styles.
  */
 function calderflower_scripts() {
-	//wp_enqueue_style( 'calderflower-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'calderflower-style', get_stylesheet_uri() );
 	wp_enqueue_style('bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array());
 	wp_enqueue_style('slick', get_template_directory_uri() . '/assets/css/slick.css', array());
 	wp_enqueue_style('selectric', get_template_directory_uri() . '/assets/css/selectric.css', array());

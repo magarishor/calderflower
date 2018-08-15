@@ -64,7 +64,7 @@
                 </div>
                 <div class="col-2 d-flex justify-content-end align-items-center">
                   <?php cf_social_icons_output(); ?>
-                  <a class="mbl-call" href="tel:50050"> <img src="<?php echo get_stylesheet_directory_uri()?>/assets/img/call-img.png" alt=""> </a>
+                  <a class="mbl-call" href="tel:0296989822"> <img src="<?php echo get_stylesheet_directory_uri()?>/assets/img/call-img.png" alt=""> </a>
                 </div>
             </div>
         </div>
