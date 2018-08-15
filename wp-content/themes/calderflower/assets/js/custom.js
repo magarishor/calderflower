@@ -73,6 +73,10 @@ jQuery(function($){
               });
      }
 
+
+    //  selectric js
+    $('.selectric').selectric();
+
    
 });
 
