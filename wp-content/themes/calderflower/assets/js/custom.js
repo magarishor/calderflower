@@ -72,13 +72,10 @@ jQuery(function($){
      }
 
 
-<<<<<<< HEAD
-=======
     //  selectric js
     $('.selectric').selectric();
 
-   
->>>>>>> 0f69603d7b9be42df7555f1d24b208f57cb923e0
+
 });
 
 
