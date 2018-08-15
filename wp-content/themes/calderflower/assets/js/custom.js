@@ -15,7 +15,7 @@ jQuery(function($){
          focusOnSelect: true,
          fade: false
      });
-     
+
     // scroll down
     $(".fa-chevron-down").click(function () {
         $("html,body").animate({
@@ -37,11 +37,9 @@ jQuery(function($){
         $('#dp-hamburger').clickToggle(function () {
                 $("#site-wrapper").css("left", get_diff + 90);
                 console.log(get_diff);
-                $("#header").css("position", "absolute");
             },
             function () {
                 $("#site-wrapper").css("left", 0);
-                $("#header").css("position", "fixed");
                 console.log(get_diff);
 
             });
@@ -73,7 +71,7 @@ jQuery(function($){
               });
      }
 
-   
+
 });
 
 
