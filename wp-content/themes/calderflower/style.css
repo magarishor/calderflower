@@ -25,3 +25,34 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 .gform_body .gfield_required {
     display: none;
 }
+.copyright-block .footer-links li a {
+    font-size: 18px;
+}
+
+
+@media (max-width:768px){
+	.sbi_photo {
+	    height: 200px !important;
+	}
+	#sb_instagram.sbi_col_3 #sbi_images .sbi_item, #sb_instagram.sbi_col_4 #sbi_images .sbi_item, #sb_instagram.sbi_col_5 #sbi_images .sbi_item, #sb_instagram.sbi_col_6 #sbi_images .sbi_item, #sb_instagram.sbi_col_7 #sbi_images .sbi_item, #sb_instagram.sbi_col_8 #sbi_images .sbi_item, #sb_instagram.sbi_col_9 #sbi_images .sbi_item, #sb_instagram.sbi_col_10 #sbi_images .sbi_item {
+	    width: 33.33%;
+	}
+	#sb_instagram.sbi_col_6 #sbi_images .sbi_item:nth-child(3) {padding-right: 0 !important;}
+
+	#sb_instagram.sbi_col_6 #sbi_images .sbi_item:nth-child(4) {
+	    padding-left: 0 !important;
+	}
+}
+@media (max-width:480px){
+	.sbi_photo {
+	    height: 118px !important;
+	}
+	#sb_instagram.sbi_col_3 #sbi_images .sbi_item, #sb_instagram.sbi_col_4 #sbi_images .sbi_item, #sb_instagram.sbi_col_5 #sbi_images .sbi_item, #sb_instagram.sbi_col_6 #sbi_images .sbi_item, #sb_instagram.sbi_col_7 #sbi_images .sbi_item, #sb_instagram.sbi_col_8 #sbi_images .sbi_item, #sb_instagram.sbi_col_9 #sbi_images .sbi_item, #sb_instagram.sbi_col_10 #sbi_images .sbi_item {
+	    width: 33.33%;
+	}
+	#sb_instagram.sbi_col_6 #sbi_images .sbi_item:nth-child(3) {padding-right: 0 !important;}
+
+	#sb_instagram.sbi_col_6 #sbi_images .sbi_item:nth-child(4) {
+	    padding-left: 0 !important;
+	}
+}

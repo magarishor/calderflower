@@ -41,7 +41,7 @@ class CF_Type_Team {
 			'has_archive'        => false,
 			'hierarchical'       => false,
 			'menu_position'      => null,
-			'supports'           => array( 'title', 'thumbnail', ),
+			'supports'           => array( 'title', 'editor', 'thumbnail', ),
 			// 'menu_icon'			 => 'dashicons-slides',
 		);
 
