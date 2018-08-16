@@ -32,7 +32,7 @@ Template Name: Projects
     ── -->
     <div class="project-filter">
     <div class="container">
-        <div class="row filter-row">
+        <div class="row filter-row desktop-pr-filter">
             <div class="col-lg-7 filter-by">
                 <span class="filter-label">Filter By</span>
                 <select  id="project-area" class="selectric sel-green">
@@ -63,32 +63,83 @@ Template Name: Projects
             </div>
         </div>
 
+        <div class="row filter-row mobile-pr-filter">
+            <div class="col-12 filter-by">
+
+                <div  id="project-area" class="sel-green">
+                   <div class="radio">
+                      <label><input type="radio" name="optradio">Option 1</label>
+                   </div>
+                   <div class="radio">
+                      <label><input type="radio" name="optradio">Option 2</label>
+                   </div>
+                </div>
+               
+            </div>
+           
+        </div>
+
         <div class="row project-grids">
             <div class="project-grid">
-                <img class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/filter-img-small.jpg" alt="small jpg">
+                <div class="work-block" onclick="">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/filter-img-small.jpg" alt="small img" class="img-fluid work-image">
+                    <div class="work-middle">
+                        <p> <span>Bupa </span>  Baulkham Hills Aged Care</p>
+                        <a href="#" class="work-btn site-btn btn-orange">View Work</a>
+                    </div>
+                </div>
             </div>
             <div class="project-grid">
-                <img class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/filter-img-large.jpg" alt="large jpg">
+                <div class="work-block" onclick="">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/filter-img-large.jpg" alt="large img" class="img-fluid work-image">
+                    <div class="work-middle">
+                        <p> <span>Bupa </span>  Baulkham Hills Aged Care</p>
+                        <a href="#" class="work-btn site-btn btn-orange">View Work</a>
+                    </div>
+                </div>
             </div>
             <div class="project-grid">
-                <img class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/filter-img-large.jpg" alt="large jpg">
+                <div class="work-block" onclick="">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/filter-img-large.jpg" alt="large img" class="img-fluid work-image">
+                    <div class="work-middle">
+                        <p> <span>Bupa </span>  Baulkham Hills Aged Care</p>
+                        <a href="#" class="work-btn site-btn btn-orange">View Work</a>
+                    </div>
+                </div>
             </div>
             <div class="project-grid">
-                <img class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/filter-img-large.jpg" alt="large jpg">
+                <div class="work-block" onclick="">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/filter-img-large.jpg" alt="large img" class="img-fluid work-image">
+                    <div class="work-middle">
+                        <p> <span>Bupa </span>  Baulkham Hills Aged Care</p>
+                        <a href="#" class="work-btn site-btn btn-orange">View Work</a>
+                    </div>
+                </div>
             </div>
             <div class="project-grid">
-                <img class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/filter-img-large.jpg" alt="large jpg">
+                <div class="work-block" onclick="">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/filter-img-large.jpg" alt="large img" class="img-fluid work-image">
+                    <div class="work-middle">
+                        <p> <span>Bupa </span>  Baulkham Hills Aged Care</p>
+                        <a href="#" class="work-btn site-btn btn-orange">View Work</a>
+                    </div>
+                </div>
             </div>
             <div class="project-grid">
-                <img class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/filter-img-large.jpg" alt="large jpg">
+                <div class="work-block" onclick="">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/filter-img-large.jpg" alt="large img" class="img-fluid work-image">
+                    <div class="work-middle">
+                        <p> <span>Bupa </span>  Baulkham Hills Aged Care</p>
+                        <a href="#" class="work-btn site-btn btn-orange">View Work</a>
+                    </div>
+                </div>
             </div>
-            <div class="project-grid">
-                <img class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/filter-img-large.jpg" alt="large jpg">
-            </div>
+           
         </div>
     </div>
     </div>
 
+  
 
 
  <?php
