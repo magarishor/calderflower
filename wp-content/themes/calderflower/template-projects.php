@@ -64,15 +64,54 @@ Template Name: Projects
         </div>
 
         <div class="row filter-row mobile-pr-filter">
+            <div class="toggle-filter">
+                Show filter Options
+            </div>
+            
             <div class="col-12 filter-by">
 
-                <div  id="project-area" class="sel-green">
-                   <div class="radio">
-                      <label><input type="radio" name="optradio">Option 1</label>
-                   </div>
-                   <div class="radio">
-                      <label><input type="radio" name="optradio">Option 2</label>
-                   </div>
+                <div  id="project-area" class="sel-green radio-block">
+                  <p class="radio-block-title">Practice area:</p>
+                  <label class="">Architecture
+                    <input type="radio" name="radio" value="one">
+                    <span class="radiobtn"></span>
+                  </label>
+                  <label class="">Interiors
+                    <input type="radio"  name="radio" value="onse">
+                    <span class="radiobtn"></span>
+                  </label>
+                </div>
+               
+                <div  id="category-area" class="sel-green radio-block">
+                  <p class="radio-block-title">Practice area:</p>
+                  <label class="">Aged Care
+                    <input type="radio" name="radio1">
+                    <span class="radiobtn"></span>
+                  </label>
+                  <label class="">Housing
+                    <input type="radio"  name="radio1">
+                    <span class="radiobtn"></span>
+                  </label>
+                  <label class="">Master Planning
+                    <input type="radio"  name="radio1">
+                    <span class="radiobtn"></span>
+                  </label>
+                </div>
+
+                <div  id="category-area" class="sel-green radio-block radio-block-orange">
+                  <p class="radio-block-title">Practice area:</p>
+                  <label class="">Aged Care
+                    <input type="radio" name="radio1">
+                    <span class="radiobtn"></span>
+                  </label>
+                  <label class="">Housing
+                    <input type="radio"  name="radio1">
+                    <span class="radiobtn"></span>
+                  </label>
+                  <label class="">Master Planning
+                    <input type="radio"  name="radio1">
+                    <span class="radiobtn"></span>
+                  </label>
                 </div>
                
             </div>

@@ -89,6 +89,12 @@
     
 }
 @media (max-width: 480px) {
+    .desktop-pr-filter{
+        display: none;
+    }
+    .mobile-pr-filter{
+        display: block;
+    }
     #site-wrapper.shiftRight {
         left: 315px;
     }

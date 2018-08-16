@@ -17,6 +17,17 @@ jQuery(function($){
      });
 
     // scroll down
+    $(".toggle-filter").click(function () {
+        $(this).toggleClass("shown");
+        $(this).next(".filter-by").slideToggle("fast");
+        if ($(".toggle-filter").hasClass("shown") ){
+            jQuery("body").append("<div class='modal-backdrop fade show'> </div>");
+        }else{
+            jQuery(".modal-backdrop").remove();
+        }
+    });
+
+    // toggle filter mbl
     $(".fa-chevron-down").click(function () {
         $("html,body").animate({
             scrollTop: $(".featured-work").offset().top
