@@ -632,6 +632,18 @@
 .selectric-sel-orange {
     float: right;
     padding-right: 0 !important;
+    &:before{
+        float: left;
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: 300;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        content: "Sort by";
+        position: absolute;
+        left: -98px;
+    }
 }
 .selectric .label {
     width: 100%;
@@ -669,6 +681,9 @@
 .project-filter{
     padding-top: 15px;
     background: #fff;
+    .work-block{
+        margin-bottom: 0;
+    }
     .filter-row {
         padding-bottom: 40px;
     }

@@ -81,7 +81,7 @@ jQuery(function($){
     $('#project-area').selectric().on('change', function() {
 
       //Get selected value
-      var project_area = $('#project-area :selected').text();
+      var project_area = $('#project-area :selected').val();
 
       //ajax filter
       $.ajax({
@@ -92,8 +92,10 @@ jQuery(function($){
           project_area: project_area
         },
       })
-      .done(function() {
+      .done(function(response) {
         console.log("success");
+        $('#project-grids').html(response);
+
       })
       .fail(function() {
         console.log("error");
