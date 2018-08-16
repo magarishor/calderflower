@@ -76,6 +76,35 @@ jQuery(function($){
     $('.selectric').selectric();
 
 
+    //on change select value
+
+    $('#project-area').selectric().on('change', function() {
+
+      //Get selected value
+      var project_area = $('#project-area :selected').text();
+
+      //ajax filter
+      $.ajax({
+        url: Calderobj.admin_ajax,
+        type: 'POST',
+        data: {
+          action: 'project_area_filter',
+          project_area: project_area
+        },
+      })
+      .done(function() {
+        console.log("success");
+      })
+      .fail(function() {
+        console.log("error");
+      })
+      .always(function() {
+        console.log("complete");
+      });
+
+    });
+
+
 });
 
 

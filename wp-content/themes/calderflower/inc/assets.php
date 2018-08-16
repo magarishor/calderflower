@@ -16,7 +16,9 @@ function calderflower_scripts() {
 	wp_enqueue_script('selectric-js', get_template_directory_uri() . '/assets/js/jquery.selectric.js', array('jquery') , '4.0.0');
 	wp_enqueue_script('slick-min-jquery', get_template_directory_uri() . '/assets/js/slick.min.js', array('jquery') , '4.0.0');
 	// wp_enqueue_script('vue-jquery', get_template_directory_uri() . '/assets/js/vue.js');
-	wp_enqueue_script( 'script-name', get_template_directory_uri() . '/assets/js/custom.js', array(), '1.0.0', true );
+	wp_enqueue_script( 'custom-js', get_template_directory_uri() . '/assets/js/custom.js', array(), '1.0.0', true );
+	wp_localize_script( 'custom-js', 'Calderobj', array( 'admin_ajax' => admin_url( 'admin-ajax.php' ),
+	));
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
