@@ -117,8 +117,8 @@ header h1 {
   top: 0;
   left: 18px;
   height: 100%;
-  width: 4px;
-  background: #d7e4ed; }
+  width: 2px;
+  background: #cccccc; }
 
 @media only screen and (min-width: 1170px) {
   #cd-timeline {
@@ -154,7 +154,7 @@ header h1 {
     margin-bottom: 0; } }
 .cd-timeline-img {
   position: absolute;
-  top: 0;
+  top: 95px;
   left: 0;
   width: 40px;
   height: 40px;
@@ -1388,14 +1388,66 @@ button.close {
   background-image: url(../img/case-studies.svg); }
 .cd-timeline-block.case-studies .milestone-blk:before {
   content: "Case studies"; }
+.cd-timeline-block.awards-ach .milestone-blk:after {
+  background: #235e4d; }
+.cd-timeline-block.awards-ach .cd-timeline-content::before {
+  border-left-color: #235e4d;
+  border-right-color: #235e4d; }
+.cd-timeline-block.awards-ach .cd-timeline-img {
+  background-image: url(../img/awards.svg);
+  background-color: #235e4d; }
 .cd-timeline-block.awards-ach .milestone-blk:before {
   content: "AWARDS & ACHEIVEMENTS"; }
+.cd-timeline-block.cf-updates .milestone-blk:after {
+  background: #4f9e7a; }
+.cd-timeline-block.cf-updates .cd-timeline-content::before {
+  border-left-color: #4f9e7a;
+  border-right-color: #4f9e7a; }
+.cd-timeline-block.cf-updates .cd-timeline-img {
+  background-image: url(../img/arrow.svg);
+  background-color: #4f9e7a; }
+.cd-timeline-block.cf-updates .milestone-blk:before {
+  content: "cf updates"; }
+.cd-timeline-block.mil-articles .milestone-blk:after {
+  background: #8bcda5; }
+.cd-timeline-block.mil-articles .cd-timeline-content::before {
+  border-left-color: #8bcda5;
+  border-right-color: #8bcda5; }
+.cd-timeline-block.mil-articles .cd-timeline-img {
+  background-image: url(../img/mil-articles.svg);
+  background-color: #8bcda5; }
+.cd-timeline-block.mil-articles .milestone-blk:before {
+  content: "Articles"; }
 
 .cd-timeline-block:nth-child(even) .cd-timeline-content .mil-content {
   float: right; }
 
 .cd-timeline-block:nth-child(odd) .mil-content {
   padding-left: 57px; }
+
+.cd-timeline-block:nth-child(odd) .cd-timeline-content::before {
+  border-left-color: transparent; }
+
+.cd-timeline-block:nth-child(even) .cd-timeline-content::before {
+  border-right-color: transparent; }
+
+.cd-timeline-block:first-child .cd-timeline-img:before {
+  content: "";
+  background: #efefef;
+  width: 5px;
+  height: 180px;
+  position: absolute;
+  top: -180px;
+  left: 25px; }
+
+.cd-timeline-block:last-child .cd-timeline-img:after {
+  content: "";
+  background: #efefef;
+  width: 5px;
+  height: 220px;
+  position: absolute;
+  bottom: -220px;
+  left: 25px; }
 
 @media (min-width: 1366px) {
   .container {
