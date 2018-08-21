@@ -13,7 +13,7 @@
                 <?php the_content();?>
             </div>
             <div class="col-lg-8">
-                <img class="img-fluid" src="<?php echo $feature_img;?>" alt="">
+                <img class="img-fluid" src="<?php echo $feature_img;?>" alt="<?php the_title();?>">
             </div>
         </div>
     </div>
@@ -59,26 +59,65 @@
 
             </div>
             <div class="col-lg-5">
-                 <select  id="" class="selectric sel-orange">
-                    <option value="">most recent</option>
-                    <option value="orange">ALPHABETICAL ORDER (A-Z)</option>
-                    <option value="apple">ALPHABETICAL ORDER (Z-A)</option>
-                    <option value="banana">DATE (NEW-OLD)</option>
-                    <option value="apple">DATE (OLD-NEW)</option>
+                 <select  id="sort-by" class="selectric sel-orange">
+                    <option value="recent">most recent</option>
+                    <option value="a_to_z">ALPHABETICAL ORDER (A-Z)</option>
+                    <option value="z_to_a">ALPHABETICAL ORDER (Z-A)</option>
+                    <option value="date_desc">DATE (NEW-OLD)</option>
+                    <option value="date_asc">DATE (OLD-NEW)</option>
                 </select>
             </div>
         </div>
 
         <div class="row filter-row mobile-pr-filter">
+            <div class="toggle-filter">
+                Show filter Options
+            </div>
+
             <div class="col-12 filter-by">
 
-                <div  id="project-area" class="sel-green">
-                   <div class="radio">
-                      <label><input type="radio" name="optradio">Option 1</label>
-                   </div>
-                   <div class="radio">
-                      <label><input type="radio" name="optradio">Option 2</label>
-                   </div>
+                <div  id="project-area" class="sel-green radio-block">
+                  <p class="radio-block-title">Practice area:</p>
+                  <label class="">Architecture
+                    <input type="radio" name="radio" value="one">
+                    <span class="radiobtn"></span>
+                  </label>
+                  <label class="">Interiors
+                    <input type="radio"  name="radio" value="onse">
+                    <span class="radiobtn"></span>
+                  </label>
+                </div>
+
+                <div  id="category-area" class="sel-green radio-block">
+                  <p class="radio-block-title">Practice area:</p>
+                  <label class="">Aged Care
+                    <input type="radio" name="radio1">
+                    <span class="radiobtn"></span>
+                  </label>
+                  <label class="">Housing
+                    <input type="radio"  name="radio1">
+                    <span class="radiobtn"></span>
+                  </label>
+                  <label class="">Master Planning
+                    <input type="radio"  name="radio1">
+                    <span class="radiobtn"></span>
+                  </label>
+                </div>
+
+                <div  id="category-area" class="sel-green radio-block radio-block-orange">
+                  <p class="radio-block-title">Practice area:</p>
+                  <label class="">Aged Care
+                    <input type="radio" name="radio1">
+                    <span class="radiobtn"></span>
+                  </label>
+                  <label class="">Housing
+                    <input type="radio"  name="radio1">
+                    <span class="radiobtn"></span>
+                  </label>
+                  <label class="">Master Planning
+                    <input type="radio"  name="radio1">
+                    <span class="radiobtn"></span>
+                  </label>
                 </div>
 
             </div>
@@ -91,7 +130,7 @@
                 'post_type'=>'project',
                 'orderby'  => 'date',
                 'order' => 'DESC',
-                'posts_per_page' => '6'
+                'posts_per_page' => -1
 
             );
             $query_projects_inner = new WP_Query( $args );
@@ -118,7 +157,7 @@
 
 
 
- <?php
+<?php
         get_template_part( 'template-parts/home/content', 'letstalk' );?>
 
 <?php
