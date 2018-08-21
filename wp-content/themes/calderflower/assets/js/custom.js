@@ -56,39 +56,21 @@ jQuery(function($){
             });
     }
 
-     var is_chrome = !!window.chrome && !is_opera;
-     var is_explorer = typeof document !== 'undefined' && !!document.documentMode && !isEdge;
-     var is_firefox = typeof window.InstallTrigger !== 'undefined';
-     var is_safari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-     var is_opera = !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
-
-     if (is_safari){
-          jQuery.fn.clickToggle = function (a, b) {
-              function cb() {
-                  [b, a][this._tog ^= 1].call(this);
-              }
-              return this.on("click", cb);
-          };
-          $('#dp-hamburger').clickToggle(function () {
-                  $("#site-wrapper").css("left", get_diff + 90);
-                  console.log(get_diff);
-                  $("#header , #site-wrapper").css("left", "315px");
-              },
-              function () {
-                  $("#site-wrapper").css("left", 0);
-                  $("#header , #site-wrapper").css("left", "0");
-                  console.log(get_diff);
-
-              });
-     }
-
 
     //  selectric js
     $('.selectric').selectric();
 
+    //fancybox
+    // $(".fancybox").fancybox();
+    $("a.grouped_elements").fancybox({
+        'transitionIn': 'elastic',
+        'transitionOut': 'elastic',
+        'speedIn': 0,
+        'speedOut': 0,
+        'overlayShow': true
+    });
 
     //on change select value
-
     $('#project-area').selectric().on('change', function() {
 
       //Get selected value
@@ -178,6 +160,32 @@ jQuery(function($){
       });
 
 
+
+        var is_chrome = !!window.chrome && !is_opera;
+        var is_explorer = typeof document !== 'undefined' && !!document.documentMode && !isEdge;
+        var is_firefox = typeof window.InstallTrigger !== 'undefined';
+        var is_safari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+        var is_opera = !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+
+        if (is_safari) {
+            jQuery.fn.clickToggle = function (a, b) {
+                function cb() {
+                    [b, a][this._tog ^= 1].call(this);
+                }
+                return this.on("click", cb);
+            };
+            $('#dp-hamburger').clickToggle(function () {
+                    $("#site-wrapper").css("left", get_diff + 90);
+                    console.log(get_diff);
+                    $("#header , #site-wrapper").css("left", "315px");
+                },
+                function () {
+                    $("#site-wrapper").css("left", 0);
+                    $("#header , #site-wrapper").css("left", "0");
+                    console.log(get_diff);
+
+                });
+        }
 });
 
 
