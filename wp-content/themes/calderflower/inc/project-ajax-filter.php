@@ -28,7 +28,7 @@ function project_area_filter(){
                     )
             );
 
-        }else{
+        }elseif( $project_area ){
             $args = array(
                 'post_type'=>'project',
                 'orderby'  => 'date',

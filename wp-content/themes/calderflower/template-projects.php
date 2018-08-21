@@ -27,7 +27,7 @@
 
     <?php
         $field_name = 'field_5b6d067fbb611';
-        $field = get_field_object($field_name);
+        $field = get_field_object( $field_name );
         ?>
     <div class="project-filter">
     <div class="container">
@@ -51,7 +51,7 @@
                                );
 
                        $cats = get_categories($args);
-                       foreach($cats as $cat) {
+                        foreach( $cats as $cat ) {
                         ?>
                         <option value="<?php echo $cat->slug; ?>"><?php echo $cat->name; ?></option>
                    <?php }?>
@@ -78,44 +78,47 @@
 
                 <div  id="project-area" class="sel-green radio-block">
                   <p class="radio-block-title">Practice area:</p>
-                  <label class="">Architecture
-                    <input type="radio" name="radio" value="one">
-                    <span class="radiobtn"></span>
-                  </label>
-                  <label class="">Interiors
-                    <input type="radio"  name="radio" value="onse">
-                    <span class="radiobtn"></span>
-                  </label>
+
+                  <?php foreach( $field['choices'] as $k => $v ){?>
+                      <label class=""><?php echo $v; ?>
+                        <input type="radio" name="radio" value="<?php echo $k; ?>">
+                        <span class="radiobtn"></span>
+                      </label>
+                    <?php } ?>
                 </div>
 
                 <div  id="category-area" class="sel-green radio-block">
-                  <p class="radio-block-title">Practice area:</p>
-                  <label class="">Aged Care
-                    <input type="radio" name="radio1">
+                  <p class="radio-block-title">Category :</p>
+                  <?php
+                   foreach( $cats as $cat ) {
+                    ?>
+                  <label class=""><?php echo $cat->name; ?>
+                    <input type="radio" name="radio1" value="<?php echo $cat->slug; ?>">
                     <span class="radiobtn"></span>
                   </label>
-                  <label class="">Housing
-                    <input type="radio"  name="radio1">
-                    <span class="radiobtn"></span>
-                  </label>
-                  <label class="">Master Planning
-                    <input type="radio"  name="radio1">
-                    <span class="radiobtn"></span>
-                  </label>
+                  <?php }?>
                 </div>
 
                 <div  id="category-area" class="sel-green radio-block radio-block-orange">
-                  <p class="radio-block-title">Practice area:</p>
-                  <label class="">Aged Care
-                    <input type="radio" name="radio1">
+                  <p class="radio-block-title">Sort By:</p>
+                  <label class="">most recent
+                    <input type="radio" name="radio1" value="recent">
                     <span class="radiobtn"></span>
                   </label>
-                  <label class="">Housing
-                    <input type="radio"  name="radio1">
+                  <label class="">ALPHABETICAL ORDER (A-Z)
+                    <input type="radio"  name="radio1" value="a_to_z">
                     <span class="radiobtn"></span>
                   </label>
-                  <label class="">Master Planning
-                    <input type="radio"  name="radio1">
+                  <label class="">ALPHABETICAL ORDER (Z-A)
+                    <input type="radio"  name="radio1" value="z_to_a">
+                    <span class="radiobtn"></span>
+                  </label>
+                  <label class="">DATE (NEW-OLD)
+                    <input type="radio"  name="radio1" value="date_desc">
+                    <span class="radiobtn"></span>
+                  </label>
+                  <label class="">DATE (OLD-NEW)
+                    <input type="radio"  name="radio1" value="date_asc">
                     <span class="radiobtn"></span>
                   </label>
                 </div>
