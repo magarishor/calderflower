@@ -13,6 +13,7 @@ $cf_includes = array(
 	'inc/setup_site.php',
 	'inc/menu.php',
 	'inc/social-icon.php',
+	'inc/project-ajax-filter.php',
 	'inc/admin/init.php',
 
 );
