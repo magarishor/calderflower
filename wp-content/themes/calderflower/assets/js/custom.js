@@ -5,7 +5,9 @@ jQuery(function($){
          slidesToShow: 1,
          arrows: false,
          fade: false,
-         asNavFor: '.slider-nav'
+         asNavFor: '.slider-nav',
+         autoplay: true,
+         autoplaySpeed: 7000
      });
      $('.slider-nav').slick({
          slidesToShow: 1,
@@ -13,7 +15,9 @@ jQuery(function($){
          dots: true,
          arrows: false,
          focusOnSelect: true,
-         fade: false
+         fade: false,
+         autoplay: true,
+         autoplaySpeed: 7000
      });
 
     // scroll down
@@ -70,96 +74,8 @@ jQuery(function($){
         'overlayShow': true
     });
 
-    //on change select value
-    $('#project-area').selectric().on('change', function() {
-
-      //Get selected value
-      var project_cat = $('#project-category :selected').val();
-      var project_area = $('#project-area :selected').val();
-
-      //ajax filter
-      $.ajax({
-        url: Calderobj.admin_ajax,
-        type: 'POST',
-        data: {
-          action: 'project_area_filter',
-          project_area: project_area,
-          project_cat: project_cat,
-        },
-      })
-      .done(function(response) {
-        console.log("success");
-        $('#project-grids').html(response);
-
-      })
-      .fail(function() {
-        console.log("error");
-      })
-      .always(function() {
-        console.log("complete");
-      });
-
+    $(".inline-popup").fancybox({
     });
-
-
-    $('#project-category').selectric().on('change', function() {
-
-      //Get selected value
-      var project_cat = $('#project-category :selected').val();
-      var project_area = $('#project-area :selected').val();
-
-      //ajax filter
-      $.ajax({
-        url: Calderobj.admin_ajax,
-        type: 'POST',
-        data: {
-          action: 'project_cat_filter',
-          project_cat: project_cat,
-          project_area: project_area
-        },
-      })
-      .done(function(response) {
-        console.log("success");
-        $('#project-grids').html(response);
-
-      })
-      .fail(function() {
-        console.log("error");
-      })
-      .always(function() {
-        console.log("complete");
-      });
-
-      });
-
-    $('#sort-by').selectric().on('change', function() {
-      var project_sort_by = $('#sort-by :selected').val();
-
-       //ajax filter
-      $.ajax({
-        url: Calderobj.admin_ajax,
-        type: 'POST',
-        data: {
-          action: 'project_sort_filter',
-          project_sort_by: project_sort_by
-
-        },
-      })
-      .done(function(response) {
-        console.log("success");
-        $('#project-grids').html(response);
-
-      })
-      .fail(function() {
-        console.log("error");
-      })
-      .always(function() {
-        console.log("complete");
-      });
-
-      });
-
-
 
         var is_chrome = !!window.chrome && !is_opera;
         var is_explorer = typeof document !== 'undefined' && !!document.documentMode && !isEdge;
@@ -186,6 +102,26 @@ jQuery(function($){
 
                 });
         }
+
+        // vertical timeline
+        var $timeline_block = $('.cd-timeline-block');
+
+        //hide timeline blocks which are outside the viewport
+        $timeline_block.each(function () {
+            if ($(this).offset().top > $(window).scrollTop() + $(window).height() * 0.75) {
+                $(this).find('.cd-timeline-img, .cd-timeline-content').addClass('is-hidden');
+            }
+        });
+
+        //on scolling, show/animate timeline blocks when enter the viewport
+        $(window).on('scroll', function () {
+            $timeline_block.each(function () {
+                if ($(this).offset().top <= $(window).scrollTop() + $(window).height() * 0.75 && $(this).find('.cd-timeline-img').hasClass('is-hidden')) {
+                    $(this).find('.cd-timeline-img, .cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
+                }
+            });
+        });
+        
 });
 
 
