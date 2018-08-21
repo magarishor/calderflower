@@ -683,7 +683,7 @@ body {
     color: #fff;
     font-weight: 300;
     letter-spacing: 0.01em;
-    line-height: 1.3; }
+    line-height: 1.2; }
     .project-banner p:last-child {
       margin-bottom: 0; }
   .project-banner img {
@@ -862,7 +862,9 @@ button.close {
   right: -18px;
   background-color: #fc671a !important;
   opacity: 1;
-  font-size: 0; }
+  font-size: 0;
+  cursor: pointer;
+  z-index: 1; }
   button.close:hover {
     opacity: 1; }
 
@@ -871,7 +873,8 @@ button.close {
   object-fit: cover;
   width: 100%; }
 .team-block a {
-  text-decoration: none; }
+  text-decoration: none;
+  outline: none; }
 .team-block .team-name {
   line-height: 1;
   color: #fc671a;
@@ -890,15 +893,43 @@ button.close {
   display: block; }
   .team-block .team-designation:hover {
     color: #333333; }
+.team-block .modal-content {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none; }
+.team-block .modal-body {
+  padding: 0; }
+.team-block .team-wrap img {
+  width: 330px;
+  height: 330px;
+  float: left;
+  margin-right: 40px; }
+.team-block .team-desc {
+  padding-right: 50px; }
+  .team-block .team-desc p {
+    font-size: 18px;
+    font-weight: 300;
+    color: #333;
+    letter-spacing: 0.01em;
+    line-height: 1.2; }
+  .team-block .team-desc .team-designation {
+    margin-bottom: 25px; }
+  .team-block .team-desc .team-name {
+    margin-top: 32px; }
 
 .architecture-block {
-  margin-top: 38px; }
+  margin-top: 38px;
+  padding-bottom: 92px; }
   .architecture-block h2 {
     margin-bottom: 40px;
     line-height: 1; }
   .architecture-block .svg-team {
     width: 55px;
     margin-bottom: 16px; }
+
+#interiors-block {
+  background: #fff;
+  padding-top: 60px; }
 
 @media (min-width: 1366px) {
   .container {
@@ -990,7 +1021,30 @@ button.close {
 
   .right-banner .slider-nav.right-top-sldr {
     height: 300px;
-    margin-bottom: 25px; } }
+    margin-bottom: 25px; }
+
+  #meet-team-banner .right-top {
+    padding-left: 0; }
+
+  #meet-team-banner .img-top {
+    height: 164px; }
+
+  #meet-team-banner .img-bottom {
+    height: 94px; }
+
+  .team-block {
+    padding-bottom: 40px; }
+
+  .team-block .team-wrap img {
+    width: 100%;
+    height: 230px; }
+
+  .team-block .team-desc {
+    padding-left: 15px; }
+
+  .modal-content {
+    max-width: 94%;
+    margin: 0 auto; } }
 @media (max-width: 480px) {
   .desktop-pr-filter {
     display: none; }
@@ -1236,9 +1290,18 @@ button.close {
     margin-bottom: 10px; }
 
   .right-banner .slider-nav.right-top-sldr {
-    height: 340px; } }
+    height: 340px; }
+
+  .team-block {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%; } }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .project-grids {
     width: 100%; } }
+@media (min-width: 992px) {
+  .modal-lg {
+    max-width: 906px; } }
 
 /*# sourceMappingURL=custom.css.map */
