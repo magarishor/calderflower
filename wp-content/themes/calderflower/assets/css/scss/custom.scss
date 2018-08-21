@@ -1102,5 +1102,115 @@ button.close {
     background: #fff;
     padding-top: 60px;
 }
+.cd-timeline-content{
+    padding: 0;
+}
+
+.milestone-blk{
+    display: flex;
+    height: 100%;
+    text-decoration: none;
+    align-items: center;
+    &:hover{
+        text-decoration: none;
+    }
+    &:before{
+        content: "";
+        position: absolute;
+        text-transform: uppercase;
+        left: 21px;
+        bottom: 10px;
+        transform: rotate(270deg);
+        transform-origin: left bottom;
+        font-size: 14px;
+        letter-spacing: 0.05em;
+        line-height: 1.2;
+        z-index: 2;
+        color: #fff;
+        text-transform: uppercase;
+    }
+    &:after{
+        content: "";
+        position: absolute;
+        background: #293834;
+        left: 0;
+        top: 0;
+        width: 24px;
+        height: 100%;
+        z-index: 1;
+    }
+
+    .mil-content{
+         width: 61%;
+         float: left;
+         padding-left: 30px;
+         padding-right: 30px;
+    }
+    img{
+        width: 39%;
+        object-fit: cover;
+        min-height: 250px;
+    }
+    .mil-date{
+        font-size: 18px;
+        line-height: 1.2;
+        color: $primary-color;
+        display: block;
+        font-weight: 500;
+         padding-bottom: 15px;
+    }
+    .mil-title{
+        color: #333;
+        font-size: 24px;
+        display: block;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+    p{
+        font-weight:300;
+        font-size: 16px;
+        color: #333;
+        line-height: 1.2;
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+}
+.cd-timeline-block:nth-child(even) .milestone-blk:after{
+    right: 0;
+    left: auto;
+}
+.cd-timeline-block:nth-child(even) .milestone-blk:before{
+    right: 13px;
+    left: auto;
+    transform-origin: right;
+    bottom: 66%;
+}
+.cd-timeline-block .cd-timeline-img{
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.cd-timeline-block {
+    &.case-studies {
+        .cd-timeline-img{
+            background-image: url(../img/case-studies.svg);
+            
+        }
+        .milestone-blk:before {
+            content: "Case studies";
+        }
+    }
+    &.awards-ach {
+        .milestone-blk:before {
+            content: "AWARDS & ACHEIVEMENTS";
+        }
+    }
+}
+.cd-timeline-block:nth-child(even) .cd-timeline-content .mil-content {
+    float: right;
+}
+.cd-timeline-block:nth-child(odd) .mil-content {
+    padding-left: 57px;
+}
 // RESPONSIVE
 @import 'media';
