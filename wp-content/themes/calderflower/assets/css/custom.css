@@ -78,6 +78,20 @@ body {
   #header #top-social {
     display: flex; }
 
+.fa-instagram:before {
+  content: "\f16d";
+  width: 16px;
+  height: 16px;
+  background: url(../img/new-instagram-icon.png);
+  content: "";
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 0;
+  background-position: bottom;
+  position: relative;
+  top: 1px; }
+
 #top-social li:not(:last-child) a {
   padding-right: 13px; }
 #top-social li a {
@@ -242,11 +256,11 @@ body {
       text-transform: capitalize;
       text-align: center;
       text-decoration: none;
-      background-size: 100% 100%;
-      transition: .3s; }
+      background-size: cover;
+      transition: .3s;
+      font-weight: 300; }
       .right-banner .right-btm-sldr .bnr-page-blk:hover {
-        background-size: 105% 105%;
-        transition: .3s; }
+        opacity: 0.9; }
       .right-banner .right-btm-sldr .bnr-page-blk.bnr-projects {
         background-image: url(../img/view-projects.jpg); }
       .right-banner .right-btm-sldr .bnr-page-blk.bnr-team {
@@ -654,7 +668,8 @@ body {
     content: "\f00d"; }
 
 .project-banner {
-  padding-bottom: 20px; }
+  padding-bottom: 20px;
+  margin-top: 15px; }
   .project-banner .projects-bnr-left {
     background: #293834;
     padding: 62px 44px; }
@@ -818,6 +833,73 @@ body {
           height: 50px;
           padding-right: 10px; }
 
+#meet-team-banner .right-top {
+  padding-left: 10px; }
+#meet-team-banner .img-bottom {
+  height: 219px;
+  width: 50%; }
+#meet-team-banner .img-top {
+  height: 380px;
+  width: 100%;
+  padding-bottom: 10px; }
+#meet-team-banner .img-btm-wrap {
+  display: flex; }
+  #meet-team-banner .img-btm-wrap .img-bottom:first-child {
+    padding-right: 10px; }
+
+.architecture-block .team-block:not(:last-child) {
+  padding-right: 11px; }
+
+button.close {
+  background-repeat: no-repeat;
+  background-size: 40px 40px;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  border-radius: 50%;
+  background: url(../img/fancy-close.png);
+  top: -19px;
+  right: -18px;
+  background-color: #fc671a !important;
+  opacity: 1;
+  font-size: 0; }
+  button.close:hover {
+    opacity: 1; }
+
+.team-block img {
+  height: 219px;
+  object-fit: cover;
+  width: 100%; }
+.team-block a {
+  text-decoration: none; }
+.team-block .team-name {
+  line-height: 1;
+  color: #fc671a;
+  letter-spacing: 0.01em;
+  font-size: 24px;
+  display: inline-block;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  font-weight: 500; }
+.team-block .team-designation {
+  line-height: 1;
+  font-size: 18px;
+  letter-spacing: 0.01em;
+  font-weight: 300;
+  color: #333333;
+  display: block; }
+  .team-block .team-designation:hover {
+    color: #333333; }
+
+.architecture-block {
+  margin-top: 38px; }
+  .architecture-block h2 {
+    margin-bottom: 40px;
+    line-height: 1; }
+  .architecture-block .svg-team {
+    width: 55px;
+    margin-bottom: 16px; }
+
 @media (min-width: 1366px) {
   .container {
     max-width: 1366px; }
@@ -828,7 +910,8 @@ body {
   .container.project-banner,
   .form-map .container,
   .container.home-banner,
-  .project-filter .container {
+  .project-filter .container,
+  .architecture-block {
     padding-left: 0;
     padding-right: 0; } }
 .mbl-call,
@@ -837,7 +920,8 @@ body {
 
 @media (width: 768px) {
   #header .site-logo {
-    max-width: 200px; }
+    max-width: 200px;
+    object-fit: contain; }
 
   .featured-work .col-lg-4:not(:nth-child(3n)) .work-block {
     margin: 0; }
@@ -874,9 +958,19 @@ body {
   .copyright-block p {
     font-size: 16px; } }
 @media (max-width: 768px) {
+  #header #top-social,
+  #menu-text {
+    display: none; }
+
+  .mbl-call {
+    display: block; }
+
   .copyright-block p {
     font-size: 16px;
     margin-top: 10px; }
+
+  #header .container {
+    max-width: 98%; }
 
   .copyright-block .footer-links li a {
     font-size: 16px; }
@@ -892,7 +986,11 @@ body {
 
   #header #top-social {
     left: -15px;
-    position: relative; } }
+    position: relative; }
+
+  .right-banner .slider-nav.right-top-sldr {
+    height: 300px;
+    margin-bottom: 25px; } }
 @media (max-width: 480px) {
   .desktop-pr-filter {
     display: none; }

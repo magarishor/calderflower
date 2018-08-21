@@ -5,7 +5,9 @@ jQuery(function($){
          slidesToShow: 1,
          arrows: false,
          fade: false,
-         asNavFor: '.slider-nav'
+         asNavFor: '.slider-nav',
+         autoplay: true,
+         autoplaySpeed: 7000
      });
      $('.slider-nav').slick({
          slidesToShow: 1,
@@ -13,7 +15,9 @@ jQuery(function($){
          dots: true,
          arrows: false,
          focusOnSelect: true,
-         fade: false
+         fade: false,
+         autoplay: true,
+         autoplaySpeed: 7000
      });
 
     // scroll down
@@ -68,6 +72,9 @@ jQuery(function($){
         'speedIn': 0,
         'speedOut': 0,
         'overlayShow': true
+    });
+
+    $(".inline-popup").fancybox({
     });
 
         var is_chrome = !!window.chrome && !is_opera;

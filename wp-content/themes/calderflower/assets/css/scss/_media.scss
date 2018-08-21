@@ -8,7 +8,8 @@
     .container.project-banner,
     .form-map .container,
     .container.home-banner,
-    .project-filter .container
+    .project-filter .container,
+    .architecture-block
     {
         padding-left: 0;
         padding-right: 0;
@@ -25,6 +26,7 @@
 @media (width:768px){
     #header .site-logo {
         max-width: 200px;
+        object-fit: contain;
     }
     .featured-work .col-lg-4:not(:nth-child(3n)) .work-block {
         margin: 0;
@@ -66,9 +68,19 @@
     }
 }
 @media (max-width:768px){
+    #header #top-social,
+    #menu-text {
+        display: none;
+    }
+    .mbl-call{
+        display: block;
+    }
     .copyright-block p {
         font-size: 16px;
         margin-top: 10px;
+    }
+    #header .container {
+        max-width: 98%;
     }
     .copyright-block .footer-links li a {
         font-size: 16px;
@@ -86,7 +98,10 @@
         left: -15px;
         position: relative;
     }
-    
+    .right-banner .slider-nav.right-top-sldr {
+        height: 300px;
+        margin-bottom: 25px;
+    }
 }
 @media (max-width: 480px) {
     .desktop-pr-filter{
