@@ -41,7 +41,7 @@ class CF_Type_Project {
 			'has_archive'        => true,
 			'hierarchical'       => false,
 			'menu_position'      => null,
-			'supports'           => array( 'title', 'editor', 'thumbnail', ),
+			'supports'           => array( 'title', 'editor', ),
 			// 'menu_icon'			 => 'dashicons-slides',
 		);
 
