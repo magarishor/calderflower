@@ -70,7 +70,7 @@ Modules - reusable parts of our design
 -------------------------------- */
 .cd-container {
   /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
-  width: 90%;
+  width: 100%;
   max-width: 1366px;
   margin: 0 auto; }
 
@@ -105,10 +105,7 @@ header h1 {
     font-size: 24px;
     font-size: 1.5rem; } }
 #cd-timeline {
-  position: relative;
-  padding: 2em 0;
-  margin-top: 2em;
-  margin-bottom: 2em; }
+  position: relative; }
 
 #cd-timeline::before {
   /* this is the vertical line */
@@ -121,10 +118,6 @@ header h1 {
   background: #cccccc; }
 
 @media only screen and (min-width: 1170px) {
-  #cd-timeline {
-    margin-top: 3em;
-    margin-bottom: 3em; }
-
   #cd-timeline::before {
     left: 50%;
     margin-left: -2px; } }
@@ -1086,13 +1079,13 @@ header h1 {
   .project-filter .selectric-wrapper {
     padding-right: 10px; }
 
-.project-grids .project-grid, .project-grids .project-grid:nth-child(1), .project-grids .project-grid:nth-child(4), .project-grids .project-grid:nth-child(5), .project-grids .project-grid:nth-child(6), .project-grids .project-grid:nth-child(7), .project-grids .project-grid:nth-child(8), .project-grids .project-grid:nth-child(13), .project-grids .project-grid:nth-child(14), .project-grids .project-grid:nth-child(15), .project-grids .project-grid:nth-child(16), .project-grids .project-grid:nth-child(17), .project-grids .project-grid:nth-child(10) {
+.project-grids .project-grid:nth-child(9n + 1), .project-grids .project-grid:nth-child(9n + 4), .project-grids .project-grid:nth-child(9n + 5), .project-grids .project-grid:nth-child(9n + 6), .project-grids .project-grid:nth-child(9n + 7), .project-grids .project-grid:nth-child(9n + 8) {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 33.333333%;
   flex: 0 0 33.333333%;
   max-width: 33.333333%; }
 
-.project-grids .project-grid:nth-child(2), .project-grids .project-grid:nth-child(18), .project-grids .project-grid:nth-child(11), .project-grids .project-grid:nth-child(12), .project-grids .project-grid:nth-child(9), .project-grids .project-grid:nth-child(3) {
+.project-grids .project-grid:nth-child(9n + 2), .project-grids .project-grid:nth-child(9n + 3), .project-grids .project-grid:nth-child(9n + 9) {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 66.666666%;
   flex: 0 0 66.666666%;
@@ -1388,6 +1381,8 @@ button.close {
   background-image: url(../img/case-studies.svg); }
 .cd-timeline-block.case-studies .milestone-blk:before {
   content: "Case studies"; }
+.cd-timeline-block.case-studies:nth-child(even) .milestone-blk:before {
+  bottom: 36%; }
 .cd-timeline-block.awards-ach .milestone-blk:after {
   background: #235e4d; }
 .cd-timeline-block.awards-ach .cd-timeline-content::before {
@@ -1408,6 +1403,8 @@ button.close {
   background-color: #4f9e7a; }
 .cd-timeline-block.cf-updates .milestone-blk:before {
   content: "cf updates"; }
+.cd-timeline-block.cf-updates:nth-child(even) .milestone-blk:before {
+  bottom: 30%; }
 .cd-timeline-block.mil-articles .milestone-blk:after {
   background: #8bcda5; }
 .cd-timeline-block.mil-articles .cd-timeline-content::before {
@@ -1418,6 +1415,8 @@ button.close {
   background-color: #8bcda5; }
 .cd-timeline-block.mil-articles .milestone-blk:before {
   content: "Articles"; }
+.cd-timeline-block.mil-articles:nth-child(even) .milestone-blk:before {
+  bottom: 25%; }
 
 .cd-timeline-block:nth-child(even) .cd-timeline-content .mil-content {
   float: right; }
@@ -1449,6 +1448,49 @@ button.close {
   bottom: -220px;
   left: 25px; }
 
+.milestone-timeline {
+  position: relative;
+  padding-top: 40px; }
+  .milestone-timeline .mil-filter {
+    position: absolute;
+    z-index: 1;
+    width: 50%; }
+  .milestone-timeline .selectric {
+    width: 100%;
+    max-width: 453px; }
+  .milestone-timeline .selectric-scroll ul li {
+    position: relative;
+    padding-left: 50px;
+    background: #fff; }
+    .milestone-timeline .selectric-scroll ul li:nth-child(even) {
+      background: #fafafa; }
+    .milestone-timeline .selectric-scroll ul li:before {
+      content: "";
+      width: 40px;
+      height: 100%;
+      display: inline-block;
+      background-color: #293834;
+      background-size: 20px 20px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-repeat: no-repeat;
+      background-position: center; }
+    .milestone-timeline .selectric-scroll ul li:first-child {
+      display: none; }
+    .milestone-timeline .selectric-scroll ul li.case-studies:before {
+      background-image: url(../img/case-studies.svg);
+      background-color: #293834; }
+    .milestone-timeline .selectric-scroll ul li.awards:before {
+      background-image: url(../img/awards.svg);
+      background-color: #235e4d; }
+    .milestone-timeline .selectric-scroll ul li.cf-updates:before {
+      background-image: url(../img/arrow.svg);
+      background-color: #4f9e7a; }
+    .milestone-timeline .selectric-scroll ul li.articles:before {
+      background-image: url(../img/mil-articles.svg);
+      background-color: #8bcda5; }
+
 @media (min-width: 1366px) {
   .container {
     max-width: 1366px; }
@@ -1460,7 +1502,8 @@ button.close {
   .form-map .container,
   .container.home-banner,
   .project-filter .container,
-  .architecture-block {
+  .architecture-block,
+  .milestone-timeline {
     padding-left: 0;
     padding-right: 0; } }
 .mbl-call,

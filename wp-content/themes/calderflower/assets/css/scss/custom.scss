@@ -826,29 +826,17 @@
     padding-left: 15px;
     padding-right: 5px;
     padding-bottom: 75px;
-     & .project-grid{
-        @extend %small-grid;
-     }
-     & .project-grid:nth-child(1) ,
-     & .project-grid:nth-child(4) ,
-     & .project-grid:nth-child(5) ,
-     & .project-grid:nth-child(6) ,
-     & .project-grid:nth-child(7) ,
-     & .project-grid:nth-child(8) ,
-     & .project-grid:nth-child(13) ,
-     & .project-grid:nth-child(14) ,
-     & .project-grid:nth-child(15) ,
-     & .project-grid:nth-child(16) ,
-     & .project-grid:nth-child(17) ,
-     & .project-grid:nth-child(10) {
+     & .project-grid:nth-child(9n + 1) ,
+     & .project-grid:nth-child(9n + 4) ,
+     & .project-grid:nth-child(9n + 5) ,
+     & .project-grid:nth-child(9n + 6) ,
+     & .project-grid:nth-child(9n + 7) ,
+     & .project-grid:nth-child(9n + 8){
          @extend %small-grid;
      }
-     & .project-grid:nth-child(2) ,
-     & .project-grid:nth-child(18) ,
-     & .project-grid:nth-child(11) ,
-     & .project-grid:nth-child(12) ,
-     & .project-grid:nth-child(9) ,
-     & .project-grid:nth-child(3) {
+     & .project-grid:nth-child(9n + 2) ,
+     & .project-grid:nth-child(9n + 3) ,
+     & .project-grid:nth-child(9n + 9){
          @extend %large-grid;
      }
      & .project-grid:nth-child(2) {
@@ -1198,6 +1186,9 @@ button.close {
         .milestone-blk:before {
             content: "Case studies";
         }
+        &:nth-child(even) .milestone-blk:before {
+            bottom: 36%;
+        }
     }
     &.awards-ach {
         .milestone-blk:after{
@@ -1230,6 +1221,9 @@ button.close {
         .milestone-blk:before {
             content: "cf updates";
         }
+        &:nth-child(even) .milestone-blk:before {
+            bottom: 30%;
+        }
     }
     &.mil-articles {
         .milestone-blk:after{
@@ -1245,6 +1239,9 @@ button.close {
         }
         .milestone-blk:before {
             content: "Articles";
+        }
+        &:nth-child(even) .milestone-blk:before {
+            bottom: 25%;
         }
     }
 }
@@ -1277,6 +1274,69 @@ button.close {
     position: absolute;
     bottom: -220px;
     left: 25px;
+}
+.milestone-timeline {
+    position: relative;
+    padding-top: 40px;
+    .mil-filter {
+        position: absolute;
+        z-index: 1;
+        width: 50%;
+    }
+    .selectric{
+        width: 100%;
+        max-width: 453px;
+    }
+    .selectric-scroll{
+        ul li{
+            position: relative;
+            padding-left: 50px;
+            background: #fff;
+            &:nth-child(even){
+                background: #fafafa;
+            }
+            &:before{
+                content: "";              
+                width: 40px;
+                height: 100%;
+                display: inline-block;
+                background-color: #293834;
+                background-size: 20px 20px;
+                position: absolute;
+                left: 0;
+                top: 0;
+                background-repeat: no-repeat;
+                background-position: center;
+            }     
+            &:first-child {
+                display: none;
+            }
+            &.case-studies{
+                &:before{
+                    background-image: url(../img/case-studies.svg);
+                    background-color: #293834;
+                }
+            }
+            &.awards{
+                &:before{
+                    background-image: url(../img/awards.svg);
+                    background-color: #235e4d;
+                }
+            }
+            &.cf-updates{
+                &:before{
+                    background-image: url(../img/arrow.svg);
+                    background-color: #4f9e7a;
+                }
+            }
+            &.articles{
+                &:before{
+                    background-image: url(../img/mil-articles.svg);
+                    background-color: #8bcda5;
+                }
+            }
+        }
+    }
 }
 // RESPONSIVE
 @import 'media';
