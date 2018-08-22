@@ -1095,6 +1095,10 @@ header h1 {
   padding-left: 15px;
   padding-right: 5px;
   padding-bottom: 75px; }
+  .project-grids .project-grid:nth-child(9n + 1) .big-img, .project-grids .project-grid:nth-child(9n + 4) .big-img, .project-grids .project-grid:nth-child(9n + 5) .big-img, .project-grids .project-grid:nth-child(9n + 6) .big-img, .project-grids .project-grid:nth-child(9n + 7) .big-img, .project-grids .project-grid:nth-child(9n + 8) .big-img {
+    display: none; }
+  .project-grids .project-grid:nth-child(9n + 2) .small-img, .project-grids .project-grid:nth-child(9n + 3) .small-img, .project-grids .project-grid:nth-child(9n + 9) .small-img {
+    display: none; }
   .project-grids .project-grid:nth-child(2) {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 66.666666%;
