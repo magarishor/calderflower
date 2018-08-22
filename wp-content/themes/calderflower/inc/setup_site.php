@@ -26,3 +26,5 @@ function foo_show_confirmation_and_form($form) {
   }
   return $form;
 }
+
+/**/
