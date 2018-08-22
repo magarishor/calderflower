@@ -1184,9 +1184,11 @@ header h1 {
         font-weight: 300; }
   .single-top-blk .single-top-btn {
     margin-top: 25px;
-    margin-bottom: 40px; }
+    margin-bottom: 30px; }
     .single-top-blk .single-top-btn a {
-      margin-right: 7px; }
+      margin-right: 7px;
+      padding: 0 12px;
+      margin-bottom: 10px; }
   .single-top-blk .counts {
     margin-top: 35px; }
     .single-top-blk .counts ul {
