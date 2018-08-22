@@ -1095,6 +1095,10 @@ header h1 {
   padding-left: 15px;
   padding-right: 5px;
   padding-bottom: 75px; }
+  .project-grids .project-grid:nth-child(9n + 1) .big-img, .project-grids .project-grid:nth-child(9n + 4) .big-img, .project-grids .project-grid:nth-child(9n + 5) .big-img, .project-grids .project-grid:nth-child(9n + 6) .big-img, .project-grids .project-grid:nth-child(9n + 7) .big-img, .project-grids .project-grid:nth-child(9n + 8) .big-img {
+    display: none; }
+  .project-grids .project-grid:nth-child(9n + 2) .small-img, .project-grids .project-grid:nth-child(9n + 3) .small-img, .project-grids .project-grid:nth-child(9n + 9) .small-img {
+    display: none; }
   .project-grids .project-grid:nth-child(2) {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 66.666666%;
@@ -1180,9 +1184,11 @@ header h1 {
         font-weight: 300; }
   .single-top-blk .single-top-btn {
     margin-top: 25px;
-    margin-bottom: 40px; }
+    margin-bottom: 30px; }
     .single-top-blk .single-top-btn a {
-      margin-right: 7px; }
+      margin-right: 7px;
+      padding: 0 12px;
+      margin-bottom: 10px; }
   .single-top-blk .counts {
     margin-top: 35px; }
     .single-top-blk .counts ul {
@@ -1448,6 +1454,9 @@ button.close {
   bottom: -220px;
   left: 25px; }
 
+.selectric-sel-white .selectric {
+  background: #fff; }
+
 .milestone-timeline {
   position: relative;
   padding-top: 40px; }
@@ -1605,7 +1614,91 @@ button.close {
 
   .modal-content {
     max-width: 94%;
-    margin: 0 auto; } }
+    margin: 0 auto; }
+
+  .milestone-timeline .mil-filter {
+    position: relative;
+    width: 100%;
+    margin-bottom: 40px; }
+
+  .selectric {
+    font-size: 18px;
+    color: #333333;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    font-weight: 600;
+    height: 48px;
+    line-height: 48px;
+    background: #fff;
+    padding-left: 20px; }
+
+  .milestone-blk .mil-content {
+    order: 1;
+    width: 100%;
+    padding-bottom: 25px; }
+
+  .milestone-blk img {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 20px; }
+
+  .milestone-blk {
+    flex-wrap: wrap; }
+
+  .cd-timeline-content::before {
+    top: 50%; }
+
+  .cd-timeline-block:nth-child(odd) .cd-timeline-content::before {
+    border-right-color: #293834; }
+
+  .cd-timeline-block:nth-child(even) .cd-timeline-content::before {
+    border-right-color: #293834; }
+
+  .cd-timeline-block:nth-child(even) .milestone-blk:after {
+    right: auto; }
+
+  .cd-timeline-block.awards-ach .cd-timeline-content::before {
+    border-left-color: transparent;
+    border-right-color: #235e4d !important; }
+
+  .cd-timeline-block.cf-updates .cd-timeline-content::before {
+    border-right-color: #4f9e7a !important; }
+
+  .cd-timeline-block.cf-updates .cd-timeline-content::before {
+    border-left-color: transparent; }
+
+  .cd-timeline-block.mil-articles .cd-timeline-content::before {
+    border-left-color: transparent;
+    border-right-color: #8bcda5 !important; }
+
+  .cd-timeline-block:nth-child(even) .milestone-blk:before {
+    left: 21px;
+    bottom: 10px !important;
+    transform-origin: left bottom; }
+
+  .cd-timeline-img {
+    top: 47%;
+    left: -3%; }
+
+  .cd-timeline-block:first-child .cd-timeline-img:before {
+    left: 16px;
+    height: 320px;
+    top: -320px; }
+
+  .cd-timeline-block:last-child .cd-timeline-img:after {
+    left: 16px;
+    height: 320px;
+    bottom: -320px; }
+
+  .cd-timeline-img {
+    width: 60px;
+    height: 60px; }
+
+  .cd-timeline-content {
+    margin-left: 85px; }
+
+  .milestone-blk .mil-content {
+    padding-left: 40px; } }
 @media (max-width: 480px) {
   .desktop-pr-filter {
     display: none; }

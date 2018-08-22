@@ -214,7 +214,9 @@ jQuery(function($) {
 
 
     //  selectric js
-    $('.selectric').selectric();
+    $('.selectric').selectric({
+        disableOnMobile: true
+    });
 
     //fancybox
     // $(".fancybox").fancybox();
