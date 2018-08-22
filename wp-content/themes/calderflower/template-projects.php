@@ -125,6 +125,9 @@
 
         <div class="row project-grids" id="project-grids">
             <?php
+              $total_post_count = wp_count_posts( 'project' );
+              $total_post = $total_post_count->publish;
+
               $args = array(
                   'post_type'=>'project',
                   'orderby'  => 'date',
@@ -148,7 +151,9 @@
                   </div>
               </article>
             <?php endwhile; ?>
-            <div id="loadmore"> Load More </div>
+            <div class="btn-wrap-center">
+                <a href="#" class="site-btn btn-orange" id="loadmore">Load More </a>
+            </div>
         </div>
     </div>
     </div>
