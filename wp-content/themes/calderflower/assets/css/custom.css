@@ -1459,7 +1459,8 @@ button.close {
 
 .milestone-timeline {
   position: relative;
-  padding-top: 40px; }
+  padding-top: 40px;
+  overflow: hidden; }
   .milestone-timeline .mil-filter {
     position: absolute;
     z-index: 1;
@@ -1499,6 +1500,42 @@ button.close {
     .milestone-timeline .selectric-scroll ul li.articles:before {
       background-image: url(../img/mil-articles.svg);
       background-color: #8bcda5; }
+
+#about-banner .right-top-sldr img {
+  width: 100%;
+  height: 381px;
+  margin-bottom: 10px; }
+#about-banner .right-btm-sldr a {
+  flex-wrap: wrap;
+  align-content: center;
+  line-height: 1.2;
+  letter-spacing: 0.01em; }
+  #about-banner .right-btm-sldr a.bnr-aged {
+    background: #293834; }
+  #about-banner .right-btm-sldr a.bnr-community {
+    background: #4f9e7a; }
+  #about-banner .right-btm-sldr a.bnr-housing {
+    background: #235e4d; }
+  #about-banner .right-btm-sldr a.bnr-master {
+    background: #8bcda5; }
+  #about-banner .right-btm-sldr a img {
+    width: 100%;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 12px; }
+
+.arc-int-blk .svg-team {
+  width: 55px;
+  margin-bottom: 16px; }
+.arc-int-blk h2 {
+  margin-bottom: 40px;
+  line-height: 1; }
+.arc-int-blk .int-right h2 {
+  color: #235e4d;
+  font-weight: 300; }
+.arc-int-blk .arc-left h2 {
+  color: #fc671a;
+  font-weight: 300; }
 
 @media (min-width: 1366px) {
   .container {
