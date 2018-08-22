@@ -19,17 +19,30 @@ jQuery(function($) {
         autoplaySpeed: 7000
     });
 
+    ////////////////////////////////
+    //scroll to top on mbl filter //
+    ////////////////////////////////
+    function scrollTo_filter() {
+        if ($(window).width() < 768) {
+            $("html,body").animate({
+                scrollTop: $(".project-filter").offset().top - 55
+            }, 400);
+        }
+
+    }
+
     //on change select value
-$('#project-area').selectric().on('change', function() {
-    //Get selected value
+    $('#project-area').selectric().on('change', function() {
+        //Get selected value
         var project_cat = $('#project-category :selected').val();
         var project_area = $('#project-area :selected').val();
 
-        ajax_project_filter( project_cat , project_area );
+        ajax_project_filter(project_cat, project_area);
 
-        });
+    });
 
- $("input:radio[name=radio]").click(function() {
+    $("input:radio[name=radio]").click(function() {
+        $("input[name='radio2']").prop('checked', false);
         var project_cat = $("input[name='radio1']:checked").val();
         var project_area = $("input[name='radio']:checked").val();
 
@@ -37,34 +50,35 @@ $('#project-area').selectric().on('change', function() {
         $(".modal-backdrop").remove();
         $(".filter-by").hide();
 
-        ajax_project_filter( project_cat , project_area );
+        ajax_project_filter(project_cat, project_area);
 
     });
 
 
-/* Project area filter function */
-function ajax_project_filter( project_cat , project_area ){
+    /* Project area filter function */
+    function ajax_project_filter(project_cat, project_area) {
 
-    //ajax filter
-    $.ajax({
-            url: Calderobj.admin_ajax,
-            type: 'POST',
-            data: {
-                action: 'project_area_filter',
-                project_area: project_area,
-                project_cat: project_cat,
-            },
-        })
-        .done(function(response) {
-            console.log("success");
-            $('#project-grids').html(response);
-        })
-        .fail(function() {
-            console.log("error");
-        })
-        .always(function() {
-            console.log("complete");
-        });
+        //ajax filter
+        $.ajax({
+                url: Calderobj.admin_ajax,
+                type: 'POST',
+                data: {
+                    action: 'project_area_filter',
+                    project_area: project_area,
+                    project_cat: project_cat,
+                },
+            })
+            .done(function(response) {
+                console.log("success");
+                $('#project-grids').html(response);
+                scrollTo_filter();
+            })
+            .fail(function() {
+                console.log("error");
+            })
+            .always(function() {
+                console.log("complete");
+            });
     }
 
 
@@ -73,11 +87,12 @@ function ajax_project_filter( project_cat , project_area ){
         var project_cat = $('#project-category :selected').val();
         var project_area = $('#project-area :selected').val();
         //ajax filter
-        ajax_cat_filter( project_cat , project_area );
+        ajax_cat_filter(project_cat, project_area);
 
     });
 
     $("input:radio[name=radio1]").click(function() {
+        $("input[name='radio2']").prop('checked', false);
         var project_cat = $("input[name='radio1']:checked").val();
         var project_area = $("input[name='radio']:checked").val();
 
@@ -85,72 +100,75 @@ function ajax_project_filter( project_cat , project_area ){
         $(".modal-backdrop").remove();
         $(".filter-by").hide();
 
-        ajax_cat_filter( project_cat , project_area );
+        ajax_cat_filter(project_cat, project_area);
 
     });
 
-/* Project cat filter function */
-    function ajax_cat_filter( project_cat , project_area ){
+    /* Project cat filter function */
+    function ajax_cat_filter(project_cat, project_area) {
         $.ajax({
-            url: Calderobj.admin_ajax,
-            type: 'POST',
-            data: {
-                action: 'project_cat_filter',
-                project_cat: project_cat,
-                project_area: project_area
-            },
-        })
-        .done(function(response) {
-            console.log("success");
-            $('#project-grids').html(response);
-        })
-        .fail(function() {
-            console.log("error");
-        })
-        .always(function() {
-            console.log("complete");
-        });
+                url: Calderobj.admin_ajax,
+                type: 'POST',
+                data: {
+                    action: 'project_cat_filter',
+                    project_cat: project_cat,
+                    project_area: project_area
+                },
+            })
+            .done(function(response) {
+                console.log("success");
+                $('#project-grids').html(response);
+                scrollTo_filter();
+            })
+            .fail(function() {
+                console.log("error");
+            })
+            .always(function() {
+                console.log("complete");
+            });
     }
 
 
     $('#sort-by').selectric().on('change', function() {
         var project_sort_by = $('#sort-by :selected').val();
         //ajax filter
-        ajax_filer_sortby( project_sort_by );
+        ajax_filer_sortby(project_sort_by);
 
     });
 
     $("input:radio[name=radio2]").click(function() {
+        $("input[name='radio'], input[name='radio1']").prop('checked', false);
         var project_sort_by = $("input[name='radio2']:checked").val();
 
         $('.toggle-filter').removeClass("shown");
         $(".modal-backdrop").remove();
         $(".filter-by").hide();
 
-        ajax_filer_sortby( project_sort_by );
+        ajax_filer_sortby(project_sort_by);
 
     });
 
     //ajax filter sort by
-    function ajax_filer_sortby( project_sort_by ){
+    function ajax_filer_sortby(project_sort_by) {
         $.ajax({
-            url: Calderobj.admin_ajax,
-            type: 'POST',
-            data: {
-                action: 'project_sort_filter',
-                project_sort_by: project_sort_by
-            },
-        })
-        .done(function(response) {
-            console.log("success");
-            $('#project-grids').html(response);
-        })
-        .fail(function() {
-            console.log("error");
-        })
-        .always(function() {
-            console.log("complete");
-        });
+                url: Calderobj.admin_ajax,
+                type: 'POST',
+                data: {
+                    action: 'project_sort_filter',
+                    project_sort_by: project_sort_by
+                },
+            })
+            .done(function(response) {
+                console.log("success");
+                $('#project-grids').html(response);
+                scrollTo_filter();
+            })
+            .fail(function() {
+                console.log("error");
+            })
+            .always(function() {
+                console.log("complete");
+            });
     }
 
 
@@ -286,4 +304,3 @@ function dpToggleMenu(x) {
 //         }
 //     }
 // })
-
