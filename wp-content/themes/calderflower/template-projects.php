@@ -35,7 +35,7 @@
             <div class="col-lg-7 filter-by">
                 <span class="filter-label">Filter By</span>
                 <select  id="project-area" class="selectric sel-green">
-                    <option value="">Project Area</option>
+                    <option value="">Practice Area</option>
                    <?php foreach( $field['choices'] as $k => $v ){
                     echo '<option value="' . $k . '">' . $v . '</option>';
                     } ?>
@@ -102,23 +102,23 @@
                 <div  id="category-area" class="sel-green radio-block radio-block-orange">
                   <p class="radio-block-title">Sort By:</p>
                   <label class="">most recent
-                    <input type="radio" name="radio1" value="recent">
+                    <input type="radio" name="radio2" value="recent">
                     <span class="radiobtn"></span>
                   </label>
                   <label class="">ALPHABETICAL ORDER (A-Z)
-                    <input type="radio"  name="radio1" value="a_to_z">
+                    <input type="radio"  name="radio2" value="a_to_z">
                     <span class="radiobtn"></span>
                   </label>
                   <label class="">ALPHABETICAL ORDER (Z-A)
-                    <input type="radio"  name="radio1" value="z_to_a">
+                    <input type="radio"  name="radio2" value="z_to_a">
                     <span class="radiobtn"></span>
                   </label>
                   <label class="">DATE (NEW-OLD)
-                    <input type="radio"  name="radio1" value="date_desc">
+                    <input type="radio"  name="radio2" value="date_desc">
                     <span class="radiobtn"></span>
                   </label>
                   <label class="">DATE (OLD-NEW)
-                    <input type="radio"  name="radio1" value="date_asc">
+                    <input type="radio"  name="radio2" value="date_asc">
                     <span class="radiobtn"></span>
                   </label>
                 </div>
@@ -129,6 +129,7 @@
 
         <div class="row project-grids" id="project-grids">
             <?php
+
             $args = array(
                 'post_type'=>'project',
                 'orderby'  => 'date',
@@ -140,12 +141,14 @@
             //var_dump($query_projects_inner);
             while ( $query_projects_inner->have_posts() ) :
             $query_projects_inner->the_post();
-            $img = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'full' );
+            //$img = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'full' );
+            $featured_image = get_field( 'projects_featured_image' );
             ?>
 
             <div class="project-grid" id="project-grid-wrapper">
                 <div class="work-block" onclick="">
-                    <img src="<?php echo $img[0];?>" alt="small img" class="img-fluid work-image">
+                    <img src="<?php echo $featured_image['project_square_image']['url'];?>" alt="<?php echo $featured_image['project_square_image']['alt'];?>" class=" small-img img-fluid work-image">
+                    <img src="<?php echo $featured_image['project_rectangle_image']['url'];?>" alt="<?php echo $featured_image['project_square_image']['alt'];?>" class=" big-img img-fluid work-image">
                     <div class="work-middle">
                         <p> <span><?php echo get_field( 'projects_subtitle' );?> </span>  <?php the_title();?></p>
                         <a href="<?php the_permalink();?>" class="work-btn site-btn btn-orange">View Work</a>

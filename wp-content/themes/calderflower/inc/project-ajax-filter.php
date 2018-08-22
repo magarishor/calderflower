@@ -43,15 +43,26 @@ function project_area_filter(){
                     )
             );
 
+        }else{
+
+            $args = array(
+                'post_type'=>'project',
+                'orderby'  => 'date',
+                'order' => 'DESC',
+                'posts_per_page' => -1,
+
+            );
+
         }
             $query_projects_inner = new WP_Query( $args );
             while ( $query_projects_inner->have_posts() ) :
             $query_projects_inner->the_post();
-            $img = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'full' );
+            $featured_image = get_field( 'projects_featured_image' );
             ?>
             <div class="project-grid" id="project-grid-wrapper">
                 <div class="work-block" onclick="">
-                    <img src="<?php echo $img[0];?>" alt="small img" class="img-fluid work-image">
+                    <img src="<?php echo $featured_image['project_square_image']['url'];?>" alt="<?php echo $featured_image['project_square_image']['alt'];?>" class=" small-img img-fluid work-image">
+                    <img src="<?php echo $featured_image['project_rectangle_image']['url'];?>" alt="<?php echo $featured_image['project_square_image']['alt'];?>" class=" big-img img-fluid work-image">
                     <div class="work-middle">
                         <p> <span><?php echo get_field( 'projects_subtitle' );?> </span>  <?php the_title();?></p>
                         <a href="<?php the_permalink();?>" class="work-btn site-btn btn-orange">View Work</a>
@@ -92,7 +103,7 @@ function project_cat_filter(){
                     )
             );
 
-        }else{
+        }elseif( $project_cat ){
             $args = array(
                 'post_type'=>'project',
                 'orderby'  => 'date',
@@ -108,14 +119,23 @@ function project_cat_filter(){
             );
 
         }
+        else{
+            $args = array(
+                'post_type'=>'project',
+                'orderby'  => 'date',
+                'order' => 'DESC',
+                'posts_per_page' => -1,
+            );
+        }
             $query_projects_inner = new WP_Query( $args );
             while ( $query_projects_inner->have_posts() ) :
             $query_projects_inner->the_post();
-            $img = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'full' );
+            $featured_image = get_field( 'projects_featured_image' );
             ?>
             <div class="project-grid" id="project-grid-wrapper">
                 <div class="work-block" onclick="">
-                    <img src="<?php echo $img[0];?>" alt="small img" class="img-fluid work-image">
+                    <img src="<?php echo $featured_image['project_square_image']['url'];?>" alt="<?php echo $featured_image['project_square_image']['alt'];?>" class=" small-img img-fluid work-image">
+                    <img src="<?php echo $featured_image['project_rectangle_image']['url'];?>" alt="<?php echo $featured_image['project_square_image']['alt'];?>" class=" big-img img-fluid work-image">
                     <div class="work-middle">
                         <p> <span><?php echo get_field( 'projects_subtitle' );?> </span>  <?php the_title();?></p>
                         <a href="<?php the_permalink();?>" class="work-btn site-btn btn-orange">View Work</a>
@@ -164,11 +184,12 @@ function project_sort_filter(){
     $query_projects_inner = new WP_Query( $args );
     while ( $query_projects_inner->have_posts() ) :
     $query_projects_inner->the_post();
-    $img = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'full' );
+    $featured_image = get_field( 'projects_featured_image' );
     ?>
     <div class="project-grid" id="project-grid-wrapper">
         <div class="work-block" onclick="">
-            <img src="<?php echo $img[0];?>" alt="small img" class="img-fluid work-image">
+            <img src="<?php echo $featured_image['project_square_image']['url'];?>" alt="<?php echo $featured_image['project_square_image']['alt'];?>" class=" small-img img-fluid work-image">
+            <img src="<?php echo $featured_image['project_rectangle_image']['url'];?>" alt="<?php echo $featured_image['project_square_image']['alt'];?>" class=" big-img img-fluid work-image">
             <div class="work-middle">
                 <p> <span><?php echo get_field( 'projects_subtitle' );?> </span>  <?php the_title();?></p>
                 <a href="<?php the_permalink();?>" class="work-btn site-btn btn-orange">View Work</a>
