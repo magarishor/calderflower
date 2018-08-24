@@ -117,7 +117,7 @@ function project_area_filter(){
                 </div>
             </article>
         <?php endwhile; ?>
-        <script type="text/javascript">
+        <script>
             jQuery("#total_post").val(<?php echo $proj_total_post_filter_lm; ?>);
         </script>
         <?php
