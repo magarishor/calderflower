@@ -32,7 +32,7 @@
       <div class="project-filter">
       <div class="container">
         <div class="row filter-row desktop-pr-filter">
-            <div class="col-lg-7 filter-by">
+            <div class="col-lg-8 filter-by">
                 <span class="filter-label">Filter By</span>
                 <select id="project-area" class="selectric sel-green">
                     <option value="">Practice Area</option>
@@ -57,7 +57,7 @@
                    <?php }?>
                 </select>
             </div>
-            <div class="col-lg-5">
+            <div class="col-lg-4">
                  <select  id="sort-by" class="selectric sel-orange">
                     <option value="recent">most recent</option>
                     <option value="a_to_z">ALPHABETICAL ORDER (A-Z)</option>
