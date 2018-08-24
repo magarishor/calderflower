@@ -6,12 +6,33 @@ function project_area_filter(){
 
 	$project_area = $_POST['project_area'];
     $project_cat = $_POST['project_cat'];
-            if( $project_area && $project_cat ){
+
+    if( $project_area && $project_cat ){
             $args = array(
                 'post_type'=>'project',
-                'orderby'  => 'date',
-                'order' => 'DESC',
-                'posts_per_page' => '6',
+                'orderby'  => 'menu_order',
+                'order' => 'ASC',
+                'posts_per_page' => '2',
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'cfproject_type',
+                        'field' => 'slug',
+                        'terms' => $project_cat
+                    )
+                 ),
+                'meta_query'      => array(
+                    array(
+                        'key' => 'practice_area',
+                        'value' => $project_area,
+                        'compare' => '=='
+                        )
+                    )
+            );
+            $argslm = array(
+                'post_type'=>'project',
+                'orderby'  => 'menu_order',
+                'order' => 'ASC',
+                'posts_per_page' => -1,
                 'tax_query' => array(
                     array(
                         'taxonomy' => 'cfproject_type',
@@ -28,33 +49,59 @@ function project_area_filter(){
                     )
             );
 
-        }elseif( $project_area ){
-            $args = array(
-                'post_type'=>'project',
-                'orderby'  => 'date',
-                'order' => 'DESC',
-                'posts_per_page' => -1,
-                'meta_query'      => array(
-                    array(
-                        'key' => 'practice_area',
-                        'value' => $project_area,
-                        'compare' => '=='
+            }elseif( $project_area ){
+                $args = array(
+                    'post_type'=>'project',
+                    'orderby'  => 'menu_order',
+                    'order' => 'ASC',
+                    'posts_per_page' => 9,
+                    'meta_query'      => array(
+                        array(
+                            'key' => 'practice_area',
+                            'value' => $project_area,
+                            'compare' => '=='
+                            )
                         )
-                    )
-            );
+                );
 
-        }else{
+                $argslm = array(
+                    'post_type'=>'project',
+                    'orderby'  => 'menu_order',
+                    'order' => 'ASC',
+                    'posts_per_page' => -1,
+                    'meta_query'      => array(
+                        array(
+                            'key' => 'practice_area',
+                            'value' => $project_area,
+                            'compare' => '=='
+                            )
+                        )
+                );
+
+            }else{
 
             $args = array(
                 'post_type'=>'project',
-                'orderby'  => 'date',
-                'order' => 'DESC',
+                'orderby'  => 'menu_order',
+                'order' => 'ASC',
+                'posts_per_page' => 9,
+
+            );
+            $argslm = array(
+                'post_type'=>'project',
+                'orderby'  => 'menu_order',
+                'order' => 'ASC',
                 'posts_per_page' => -1,
 
             );
 
-        }
+            }
+
             $query_projects_inner = new WP_Query( $args );
+            $query_projects_inner_lm = new WP_Query( $argslm );
+
+            $proj_total_post_filter_lm = $query_projects_inner_lm->post_count;
+            //echo $proj_total_post_filter_lm;
             while ( $query_projects_inner->have_posts() ) :
             $query_projects_inner->the_post();
             $featured_image = get_field( 'projects_featured_image' );
@@ -69,7 +116,11 @@ function project_area_filter(){
                     </div>
                 </div>
             </article>
-        <?php endwhile;
+        <?php endwhile; ?>
+        <script type="text/javascript">
+            jQuery("#total_post").val(<?php echo $proj_total_post_filter_lm; ?>);
+        </script>
+        <?php
         die();
 }
 
@@ -84,9 +135,30 @@ function project_cat_filter(){
     if( $project_area && $project_cat ){
             $args = array(
                 'post_type'=>'project',
-                'orderby'  => 'date',
-                'order' => 'DESC',
-                'posts_per_page' => '6',
+                'orderby'  => 'menu_order',
+                'order' => 'ASC',
+                'posts_per_page' => 9,
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'cfproject_type',
+                        'field' => 'slug',
+                        'terms' => $project_cat
+                    )
+                 ),
+                'meta_query'      => array(
+                    array(
+                        'key' => 'practice_area',
+                        'value' => $project_area,
+                        'compare' => '=='
+                        )
+                    )
+            );
+
+            $argslm_cat = array(
+                'post_type'=>'project',
+                'orderby'  => 'menu_order',
+                'order' => 'ASC',
+                'posts_per_page' => -1,
                 'tax_query' => array(
                     array(
                         'taxonomy' => 'cfproject_type',
@@ -106,8 +178,21 @@ function project_cat_filter(){
         }elseif( $project_cat ){
             $args = array(
                 'post_type'=>'project',
-                'orderby'  => 'date',
-                'order' => 'DESC',
+                'orderby'  => 'menu_order',
+                'order' => 'ASC',
+                'posts_per_page' => 9,
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'cfproject_type',
+                        'field' => 'slug',
+                        'terms' => $project_cat
+                    )
+                 )
+            );
+            $argslm_cat = array(
+                'post_type'=>'project',
+                'orderby'  => 'menu_order',
+                'order' => 'ASC',
                 'posts_per_page' => -1,
                 'tax_query' => array(
                     array(
@@ -122,12 +207,21 @@ function project_cat_filter(){
         else{
             $args = array(
                 'post_type'=>'project',
-                'orderby'  => 'date',
-                'order' => 'DESC',
+                'orderby'  => 'menu_order',
+                'order' => 'ASC',
+                'posts_per_page' => 9,
+            );
+            $argslm_cat = array(
+                'post_type'=>'project',
+                'orderby'  => 'menu_order',
+                'order' => 'ASC',
                 'posts_per_page' => -1,
             );
-        }
+            }
             $query_projects_inner = new WP_Query( $args );
+            $query_projects_inner_lm_cat = new WP_Query( $argslm_cat );
+            $proj_total_post_filter_lm_cat = $query_projects_inner_lm_cat->post_count;
+
             while ( $query_projects_inner->have_posts() ) :
             $query_projects_inner->the_post();
             $featured_image = get_field( 'projects_featured_image' );
@@ -142,46 +236,55 @@ function project_cat_filter(){
                     </div>
                 </div>
             </article>
-        <?php endwhile;
-        die();
+        <?php endwhile; ?>
+
+        <script>
+            jQuery("#total_post").val(<?php echo $proj_total_post_filter_lm_cat; ?>);
+        </script>
+
+       <?php die();
 
 }
 
 /* Project Sort filter */
-add_action( 'wp_ajax_project_sort_filter', 'project_sort_filter' );
-add_action( 'wp_ajax_nopriv_project_sort_filter', 'project_sort_filter' );
+add_action( 'wp_ajax_project_sort_filter', 'project_sort_filter', 10 );
+add_action( 'wp_ajax_nopriv_project_sort_filter', 'project_sort_filter', 10 );
 function project_sort_filter(){
 
     $project_sort_by = $_POST['project_sort_by'];
-    if( $project_sort_by == 'recent' ){
-        $orderby = 'date';
-        $order = 'desc';
-    }
-    elseif ( $project_sort_by == 'a_to_z' ) {
-        $orderby = 'name';
-        $order = 'desc';
-    }
-    elseif ( $project_sort_by == 'z_to_a' ) {
-        $orderby = 'name';
+    if( $project_sort_by === 'recent' ){
+        $orderby = 'menu_order';
         $order = 'asc';
     }
-    elseif ( $project_sort_by == 'date_asc' ) {
+    elseif ( $project_sort_by === 'z_to_a' ) {
+        $orderby = 'title';
+        $order = 'desc';
+    }
+    elseif ( $project_sort_by === 'a_to_z' ) {
+        $orderby = 'title';
+        $order = 'asc';
+    }
+    elseif ( $project_sort_by === 'date_asc' ) {
         $orderby = 'date';
         $order = 'asc';
     }
-    elseif ( $project_sort_by == 'date_desc' ) {
+    elseif ( $project_sort_by === 'date_desc' ) {
         $orderby = 'date';
         $order = 'desc';
+    }else{
+        $orderby = 'menu_order';
+        $order = 'asc';
     }
 
     $args = array(
         'post_type'=>'project',
         'orderby'  => $orderby,
         'order' => $order,
-        'posts_per_page' => -1,
+        'posts_per_page' => 9,
 
     );
     $query_projects_inner = new WP_Query( $args );
+    $proj_total_post_filter = $query_projects_inner->post_count;
     while ( $query_projects_inner->have_posts() ) :
     $query_projects_inner->the_post();
     $featured_image = get_field( 'projects_featured_image' );

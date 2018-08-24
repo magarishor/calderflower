@@ -14,6 +14,7 @@ $cf_includes = array(
 	'inc/menu.php',
 	'inc/social-icon.php',
 	'inc/project-ajax-filter.php',
+	'inc/project-load-more.php',
 	'inc/admin/init.php',
 
 );

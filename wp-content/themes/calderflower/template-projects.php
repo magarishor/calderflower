@@ -130,9 +130,9 @@
 
               $args = array(
                   'post_type'=>'project',
-                  'orderby'  => 'date',
-                  'order' => 'DESC',
-                  'posts_per_page' => 2
+                  'orderby'  => 'menu_order',
+                  'order' => 'ASC',
+                  'posts_per_page' => 9
               );
               $query_projects_inner = new WP_Query( $args );
               //var_dump($query_projects_inner);
@@ -151,9 +151,10 @@
                   </div>
               </article>
             <?php endwhile; ?>
-            <div class="btn-wrap-center">
-                <a href="#" class="site-btn btn-orange" id="loadmore">Load More </a>
-            </div>
+        </div>
+        <div class="btn-wrap-center">
+            <a href="#" class="site-btn btn-orange" id="loadmore">Load More </a>
+            <input type="hidden" id="total_post" value="<?php echo $total_post;?>">
         </div>
     </div>
     </div>

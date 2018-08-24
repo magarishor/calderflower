@@ -28,7 +28,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 .copyright-block .footer-links li a {
     font-size: 18px;
 }
-
+.single-main-wrap {
+    background: #fff;
+}
 
 @media (max-width:768px){
 	.sbi_photo {
