@@ -62,5 +62,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	
 }
 .project-filter .btn-wrap-center {
-	margin-bottom: -10px;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding-bottom: 60px;
+}
+.project-grids {
+	padding-bottom: 50px;
 }
