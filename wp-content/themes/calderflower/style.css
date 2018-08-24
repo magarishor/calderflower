@@ -56,3 +56,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	    padding-left: 0 !important;
 	}
 }
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+	
+}
+.project-filter .btn-wrap-center {
+	margin-bottom: -10px;
+}
