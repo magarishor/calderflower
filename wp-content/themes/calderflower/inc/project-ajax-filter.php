@@ -117,9 +117,13 @@ function project_area_filter(){
                 </div>
             </article>
         <?php endwhile; ?>
-        <script>
-            jQuery("#total_post").val(<?php echo $proj_total_post_filter_lm; ?>);
-        </script>
+        <div id="ajax-after">
+            <script>
+                jQuery("#total_post").val(<?php echo $proj_total_post_filter_lm; ?>);
+                jQuery("#ajax-after").remove();
+            </script>
+        </div>
+
         <?php
         die();
 }
