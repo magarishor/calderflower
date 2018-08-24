@@ -626,7 +626,8 @@ header h1 {
       text-decoration: none;
       background-size: cover;
       transition: .3s;
-      font-weight: 300; }
+      font-weight: 300;
+      line-height: 1.2; }
       .right-banner .right-btm-sldr .bnr-page-blk:hover {
         opacity: 0.9; }
       .right-banner .right-btm-sldr .bnr-page-blk.bnr-projects {
@@ -1056,7 +1057,8 @@ header h1 {
       margin-bottom: 0; }
   .project-banner img {
     height: 100%;
-    object-fit: cover; }
+    object-fit: cover;
+    padding-left: 10px; }
 
 .project-filter {
   padding-top: 15px;
@@ -1152,7 +1154,7 @@ header h1 {
     font-size: 21px;
     position: absolute;
     left: 50%;
-    bottom: 0;
+    bottom: 13px;
     transform: translate(-50%, -50%);
     text-decoration: none; }
     .project-single-banner a span {
@@ -1170,7 +1172,8 @@ header h1 {
     color: #333;
     letter-spacing: 0.01em;
     font-size: 18px;
-    font-weight: 300; }
+    font-weight: 300;
+    margin-bottom: 8px; }
   .single-top-blk h1 {
     font-size: 32px;
     letter-spacing: 0.01em;
@@ -1184,13 +1187,14 @@ header h1 {
         font-weight: 300; }
   .single-top-blk .single-top-btn {
     margin-top: 25px;
-    margin-bottom: 30px; }
+    margin-bottom: 22px; }
     .single-top-blk .single-top-btn a {
       margin-right: 7px;
       padding: 0 12px;
       margin-bottom: 10px; }
   .single-top-blk .counts {
-    margin-top: 35px; }
+    margin-top: 35px;
+    margin-bottom: 15px; }
     .single-top-blk .counts ul {
       display: inline-flex;
       flex-wrap: wrap;
@@ -1459,7 +1463,8 @@ button.close {
 
 .milestone-timeline {
   position: relative;
-  padding-top: 40px; }
+  padding-top: 40px;
+  overflow: hidden; }
   .milestone-timeline .mil-filter {
     position: absolute;
     z-index: 1;
@@ -1499,6 +1504,42 @@ button.close {
     .milestone-timeline .selectric-scroll ul li.articles:before {
       background-image: url(../img/mil-articles.svg);
       background-color: #8bcda5; }
+
+#about-banner .right-top-sldr img {
+  width: 100%;
+  height: 381px;
+  margin-bottom: 10px; }
+#about-banner .right-btm-sldr a {
+  flex-wrap: wrap;
+  align-content: center;
+  line-height: 1.2;
+  letter-spacing: 0.01em; }
+  #about-banner .right-btm-sldr a.bnr-aged {
+    background: #293834; }
+  #about-banner .right-btm-sldr a.bnr-community {
+    background: #4f9e7a; }
+  #about-banner .right-btm-sldr a.bnr-housing {
+    background: #235e4d; }
+  #about-banner .right-btm-sldr a.bnr-master {
+    background: #8bcda5; }
+  #about-banner .right-btm-sldr a img {
+    width: 100%;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 12px; }
+
+.arc-int-blk .svg-team {
+  width: 55px;
+  margin-bottom: 16px; }
+.arc-int-blk h2 {
+  margin-bottom: 40px;
+  line-height: 1; }
+.arc-int-blk .int-right h2 {
+  color: #235e4d;
+  font-weight: 300; }
+.arc-int-blk .arc-left h2 {
+  color: #fc671a;
+  font-weight: 300; }
 
 @media (min-width: 1366px) {
   .container {
@@ -1555,9 +1596,20 @@ button.close {
     width: 100%;
     position: relative;
     left: -4px; } }
+@media (max-width: 1200px) {
+  .selectric {
+    width: 200px; } }
 @media (max-width: 1024px) {
   .copyright-block p {
     font-size: 16px; } }
+@media (max-width: 992px) {
+  .selectric-sel-orange {
+    float: none;
+    margin-left: 100px;
+    margin-top: 10px; }
+
+  .selectric-sel-orange:before {
+    left: -100px; } }
 @media (max-width: 768px) {
   #header #top-social,
   #menu-text {
@@ -1629,8 +1681,10 @@ button.close {
     font-weight: 600;
     height: 48px;
     line-height: 48px;
-    background: #fff;
-    padding-left: 20px; }
+    padding-left: 20px;
+    max-width: 185px;
+    width: 100%;
+    margin-bottom: 5px; }
 
   .milestone-blk .mil-content {
     order: 1;
@@ -1698,7 +1752,16 @@ button.close {
     margin-left: 85px; }
 
   .milestone-blk .mil-content {
-    padding-left: 40px; } }
+    padding-left: 40px; }
+
+  .project-banner img {
+    padding-left: 0; }
+
+  .project-grids .project-grid {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50% !important;
+    flex: 0 0 50% !important;
+    max-width: 50% !important; } }
 @media (max-width: 480px) {
   .desktop-pr-filter {
     display: none; }
@@ -1726,7 +1789,7 @@ button.close {
     font-size: 0 !important; }
 
   .slider-for img {
-    width: 384px;
+    width: 100%;
     height: 370px;
     object-fit: cover; }
 
@@ -1938,7 +2001,13 @@ button.close {
     right: -44px; }
 
   #fancybox-left {
-    left: -22px; } }
+    left: -22px; }
+
+  .project-grids .project-grid {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100% !important;
+    flex: 0 0 100% !important;
+    max-width: 100% !important; } }
 @media (max-width: 360px) {
   .right-banner .slider-nav .site-btn {
     margin-bottom: 10px; }
