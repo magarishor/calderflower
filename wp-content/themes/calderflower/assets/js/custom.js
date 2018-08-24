@@ -315,7 +315,7 @@ jQuery(function($) {
 
     //  selectric js
     $('.selectric').selectric({
-        disableOnMobile: true
+        disableOnMobile: false
     });
 
     //fancybox
