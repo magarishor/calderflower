@@ -69,3 +69,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 .project-grids {
 	padding-bottom: 50px;
 }
+.right-banner {
+	max-width: 680px;
+}
+.slider-for {
+	padding-right: 10px;
+}
+div.right-banner .right-btm-sldr .bnr-page-blk{
+	width: 220px;
+}

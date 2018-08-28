@@ -72,6 +72,12 @@
     .copyright-block p {
         font-size: 16px;
     }
+    .slider-for .slick-slide img {
+        width: auto !important;
+    }
+    .slider-for {
+        padding-right: 10px;
+    }
 }
 @media (max-width:992px){
     .selectric-sel-orange {
@@ -81,6 +87,17 @@
     }
     .selectric-sel-orange:before {
         left: -100px;
+    }
+    .slider-for .slick-slide img {
+        width: 100% !important;
+        padding-right: 0;
+    }
+    .slider-for {
+        padding-right: 0px;
+    }
+    .right-banner {
+        margin-left: 0;
+        max-width: 100%;
     }
 }
 @media (max-width:768px){
@@ -236,6 +253,24 @@
          flex: 0 0 50% !important;
          max-width: 50% !important;
      }
+     .copyright-block .footer-links {
+         float: left;
+         display: flex;
+         width: 100%;
+         position: relative;
+         left: -4px;
+     }
+     .copyright-block #top-social {
+         display: flex;
+         width: 100%;
+         position: relative;
+         left: -4px;
+         padding-bottom: 15px;
+         padding-left: 6px;
+     }
+     .right-banner {
+         margin-left: 0px;
+     }
 }
 @media (max-width: 480px) {
     .desktop-pr-filter{
@@ -388,6 +423,7 @@
         text-align: center;
         padding-bottom: 40px;
         padding-top: 8px;
+        justify-content: center;
     }
     .arrow-text {
         margin-top: 28px;
@@ -505,7 +541,32 @@
         flex: 0 0 100%;
         max-width: 100%;
     }
-   
+    .project-single-banner a {
+        width: 100%;
+        text-align: center;
+    }
+    .project-grids {
+        padding: 0;
+        width: 100%;
+        margin: 0;
+    }
+    .project-grids .project-grid {
+        padding: 0;
+        padding-bottom: 10px;
+    }
+    #site-navigation {
+        width: 250px;
+    }
+    #site-wrapper.shiftRight {
+        left: 250px;
+    }
+    .project-filter .btn-wrap-center {
+        padding-top: 20px;
+        padding-bottom: 30px;
+    }
+    .right-banner .slider-nav .btn-orange {
+        margin-right: 0;
+    }
 }
 
 
@@ -520,5 +581,8 @@
 @media (min-width: 992px){
     .modal-lg {
         max-width: 906px;
+    }
+    .right-banner{
+        margin-left: 0;
     }
 }
