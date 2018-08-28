@@ -76,6 +76,7 @@ jQuery(function($) {
             .done(function(response) {
                 console.log("success");
                 $('#project-grids').html(response);
+                $('#sort-by').val("").selectric('refresh');
             var success_post_count = count_post_project('totalposts');
             if (parseInt($('#total_post').val(), 10) == success_post_count) {
                 $('#loadmore').hide();
@@ -134,6 +135,7 @@ jQuery(function($) {
             .done(function(response) {
                 console.log("success");
                 $('#project-grids').html(response);
+                $('#sort-by').val("").selectric('refresh');
                 var success_post_count = count_post_project('totalposts');
                 if (parseInt($('#total_post').val(), 10) == success_post_count) {
                 $('#loadmore').hide();
@@ -190,6 +192,8 @@ jQuery(function($) {
             .done(function(response) {
                 console.log("success");
                 $('#project-grids').html(response);
+                $('#project-area').val("").selectric('refresh');
+                $('#project-category').val("").selectric('refresh');
                 var success_post_count = count_post_project('totalposts');
                 if (parseInt($('#total_post').val(), 10) == success_post_count) {
                 $('#loadmore').hide();

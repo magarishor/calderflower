@@ -241,10 +241,12 @@ function project_cat_filter(){
                 </div>
             </article>
         <?php endwhile; ?>
-
-        <script>
-            jQuery("#total_post").val(<?php echo $proj_total_post_filter_lm_cat; ?>);
-        </script>
+         <div id="ajax-after">
+            <script>
+                jQuery("#total_post").val(<?php echo $proj_total_post_filter_lm_cat; ?>);
+                jQuery("#ajax-after").remove();
+            </script>
+        </div>
 
        <?php die();
 

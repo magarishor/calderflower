@@ -3,6 +3,11 @@
 Template Name: Meet The Team
 */
  get_header();
+  while( have_posts() ) :
+    the_post();
+    $feature_img = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) );
+    $feature_img_first = get_field( 'featured_image_first' );
+    $feature_img_second = get_field( 'featured_image_second' );
 ?>
 
     <!-- ──
@@ -13,405 +18,108 @@ Template Name: Meet The Team
     <div class="container project-banner" id="meet-team-banner">
         <div class="row no-gutters">
             <div class="col-lg-4 projects-bnr-left">
-                <h1>Meet The Team</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p> 
-                  
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, del coloraui.</p>
+                <h1><?php the_title();?></h1>
+               <?php the_content();?>
             </div>
             <div class="col-lg-8 right-top">
-                <img class="img-fluid img-top" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/filter-img-large.jpg" alt="">
+                <img class="img-fluid img-top" src="<?php echo $feature_img; ?>" alt="<?php the_title();?>">
                 <div class="img-btm-wrap">
-                    <img class="img-fluid img-bottom" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/team-first.jpg" alt="">
-                    <img class="img-fluid img-bottom" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/team-second.jpg" alt="">
+                    <img class="img-fluid img-bottom" src="<?php echo $feature_img_first['url']; ?>" alt="<?php echo $feature_img_first['alt']; ?>">
+                    <img class="img-fluid img-bottom" src="<?php echo $feature_img_second['url']; ?>" alt="<?php echo $feature_img_second['alt']; ?>">
                 </div>
             </div>
-        </div>    
+        </div>
     </div>
+<?php
+    endwhile;
+    wp_reset_postdata();
+    ?>
 
     <!-- ──
     ── ──────────────────────────────────────────────────────────
     ──   ::::::Architecture Team : :  :   :    :     :        :   :
     ── ──────────────────────────────────────────────────────────
     ── -->
+    <?php
+    $terms = get_terms(array(
+        'taxonomy' => 'cfteam_type',
+        'hide_empty' => true,
+        'orderby' => 'ID',
+        'order' => 'DESC',
+    ));
+    foreach( $terms as $term ) {
+    ?>
     <div class="container architecture-block">
         <div class="row no-gutters">
             <div class="col-lg-12 text-center">
-                <img class="svg-team" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/architexture-team.svg" alt="">
-                <h2>Architecture team</h2>
+                <img class="svg-team" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/<?php echo $term->slug; ?>-team.svg">
+                <h2><?php echo $term->name; ?> Team</h2>
             </div>
 
-                <div class="team-block col-lg-2 col-6">
-                    <a href="#" data-toggle="modal" data-target="#int-team-1">
-                         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/plain.jpg" alt="team first">
-                          <span class="team-name">Lara Calder</span>
-                          <span class="team-designation">CEO</span>
-                    </a>
-                    <div class="modal fade" id="int-team-1" tabindex="-1" role="dialog" aria-labelledby="int-team-1Title" aria-hidden="true">
-                        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                </button>
-                            <div class="modal-body">
-                                <div class="team-wrap">
-                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/plain.jpg" alt="team first">
-                                    <div class="team-desc">
-                                        <span class="team-name">Lara Calder</span>
-                                        <span class="team-designation">CEO</span>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repreh enderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-block col-lg-2 col-6">
-                    <a href="#" data-toggle="modal" data-target="#int-team-2">
-                         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/plain.jpg" alt="team first">
-                          <span class="team-name">Lara Calder2</span>
-                          <span class="team-designation">CEO2</span>
-                    </a>
-                    <div class="modal fade" id="int-team-2" tabindex="-1" role="dialog" aria-labelledby="int-team-2Title" aria-hidden="true">
-                        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                </button>
-                            <div class="modal-body">
-                                <div class="team-wrap">
-                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/plain.jpg" alt="team first">
-                                    <div class="team-desc">
-                                        <span class="team-name">Lara Calder2</span>
-                                        <span class="team-designation">CEO2</span>
-                                        <p>
-                                            2Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repreh enderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-block col-lg-2 col-6">
-                    <a href="#" data-toggle="modal" data-target="#int-team-3">
-                         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/plain.jpg" alt="team first">
-                          <span class="team-name">Lara Calder2</span>
-                          <span class="team-designation">CEO2</span>
-                    </a>
-                    <div class="modal fade" id="int-team-3" tabindex="-1" role="dialog" aria-labelledby="int-team-3Title" aria-hidden="true">
-                        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                </button>
-                            <div class="modal-body">
-                                <div class="team-wrap">
-                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/plain.jpg" alt="team first">
-                                    <div class="team-desc">
-                                        <span class="team-name">Lara Calder2</span>
-                                        <span class="team-designation">CEO2</span>
-                                        <p>
-                                            2Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repreh enderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-block col-lg-2 col-6">
-                    <a href="#" data-toggle="modal" data-target="#int-team-4">
-                         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/plain.jpg" alt="team first">
-                          <span class="team-name">Lara Calder2</span>
-                          <span class="team-designation">CEO2</span>
-                    </a>
-                    <div class="modal fade" id="int-team-4" tabindex="-1" role="dialog" aria-labelledby="int-team-4Title" aria-hidden="true">
-                        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                </button>
-                            <div class="modal-body">
-                                <div class="team-wrap">
-                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/plain.jpg" alt="team first">
-                                    <div class="team-desc">
-                                        <span class="team-name">Lara Calder2</span>
-                                        <span class="team-designation">CEO2</span>
-                                        <p>
-                                            2Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repreh enderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-block col-lg-2 col-6">
-                    <a href="#" data-toggle="modal" data-target="#int-team-5">
-                         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/plain.jpg" alt="team first">
-                          <span class="team-name">Lara Calder2</span>
-                          <span class="team-designation">CEO2</span>
-                    </a>
-                    <div class="modal fade" id="int-team-5" tabindex="-1" role="dialog" aria-labelledby="int-team-5Title" aria-hidden="true">
-                        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                </button>
-                            <div class="modal-body">
-                                <div class="team-wrap">
-                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/plain.jpg" alt="team first">
-                                    <div class="team-desc">
-                                        <span class="team-name">Lara Calder2</span>
-                                        <span class="team-designation">CEO2</span>
-                                        <p>
-                                            2Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repreh enderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-block col-lg-2 col-6">
-                    <a href="#" data-toggle="modal" data-target="#int-team-6">
-                         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/plain.jpg" alt="team first">
-                          <span class="team-name">Lara Calder2</span>
-                          <span class="team-designation">CEO2</span>
-                    </a>
-                    <div class="modal fade" id="int-team-6" tabindex="-1" role="dialog" aria-labelledby="int-team-6Title" aria-hidden="true">
-                        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                </button>
-                            <div class="modal-body">
-                                <div class="team-wrap">
-                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/plain.jpg" alt="team first">
-                                    <div class="team-desc">
-                                        <span class="team-name">Lara Calder2</span>
-                                        <span class="team-designation">CEO2</span>
-                                        <p>
-                                            2Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repreh enderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        </div>
-    </div>
+            <?php
+                $args = array(
+                    'post_type' => 'team',
+                    'post_status' => 'publish',
+                    'posts_per_page' => - 1,
+                    'tax_query' => array(
+                        array(
+                            'taxonomy' => 'cfteam_type',
+                            'field' => 'term_id',
+                            'terms' => $term->term_id
+                        )
+                    )
+                );
+                $team_query = new WP_Query($args);
+                $count = 0;
+                while ($team_query->have_posts()):
+                    $team_query->the_post();
+                    $team_img_url = get_the_post_thumbnail_url(get_the_ID() , 'full');
+                    ?>
 
-    <div id="interiors-block">
-        <div class="container architecture-block">
-            <div class="row no-gutters">
-                <div class="col-lg-12 text-center">
-                    <img class="svg-team" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/interiors-team.svg" alt="">
-                    <h2>Interiors team</h2>
-                </div>
+                <div class="team-block col-lg-2 col-6">
+                    <a href="#" data-toggle="modal" data-target="#<?php echo $term->slug; ?>-<?php echo $count; ?>">
+                         <img src="<?php echo $team_img_url;?>" alt="team first">
+                          <span class="team-name"><?php the_title();?></span>
+                          <span class="team-designation"><?php get_field('team_designation');?></span>
+                    </a>
+                    <div class="modal fade" id="<?php echo $term->slug; ?>-<?php echo $count; ?>" tabindex="-1" role="dialog" aria-labelledby="int-team-1Title" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            <div class="modal-body">
+                                <div class="team-wrap">
+                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/plain.jpg" alt="team first">
+                                    <div class="team-desc">
+                                        <span class="team-name"><?php the_title();?></span>
+                                        <span class="team-designation"><?php get_field('team_designation');?></span>
+                                        <?php the_content();?>
+                                    </div>
+                                </div>
+                            </div>
 
-                    <div class="team-block col-lg-2 col-6">
-                        <a href="#" data-toggle="modal" data-target="#int-team-1">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/plain.jpg" alt="team first">
-                            <span class="team-name">Lara Calder</span>
-                            <span class="team-designation">CEO</span>
-                        </a>
-                        <div class="modal fade" id="int-team-1" tabindex="-1" role="dialog" aria-labelledby="int-team-1Title" aria-hidden="true">
-                            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                                <div class="modal-content">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                    </button>
-                                <div class="modal-body">
-                                    <div class="team-wrap">
-                                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/plain.jpg" alt="team first">
-                                        <div class="team-desc">
-                                            <span class="team-name">Lara Calder</span>
-                                            <span class="team-designation">CEO</span>
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repreh enderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="team-block col-lg-2 col-6">
-                        <a href="#" data-toggle="modal" data-target="#int-team-2">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/plain.jpg" alt="team first">
-                            <span class="team-name">Lara Calder2</span>
-                            <span class="team-designation">CEO2</span>
-                        </a>
-                        <div class="modal fade" id="int-team-2" tabindex="-1" role="dialog" aria-labelledby="int-team-2Title" aria-hidden="true">
-                            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                                <div class="modal-content">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                    </button>
-                                <div class="modal-body">
-                                    <div class="team-wrap">
-                                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/plain.jpg" alt="team first">
-                                        <div class="team-desc">
-                                            <span class="team-name">Lara Calder2</span>
-                                            <span class="team-designation">CEO2</span>
-                                            <p>
-                                                2Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repreh enderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="team-block col-lg-2 col-6">
-                        <a href="#" data-toggle="modal" data-target="#int-team-3">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/plain.jpg" alt="team first">
-                            <span class="team-name">Lara Calder2</span>
-                            <span class="team-designation">CEO2</span>
-                        </a>
-                        <div class="modal fade" id="int-team-3" tabindex="-1" role="dialog" aria-labelledby="int-team-3Title" aria-hidden="true">
-                            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                                <div class="modal-content">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                    </button>
-                                <div class="modal-body">
-                                    <div class="team-wrap">
-                                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/plain.jpg" alt="team first">
-                                        <div class="team-desc">
-                                            <span class="team-name">Lara Calder2</span>
-                                            <span class="team-designation">CEO2</span>
-                                            <p>
-                                                2Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repreh enderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="team-block col-lg-2 col-6">
-                        <a href="#" data-toggle="modal" data-target="#int-team-4">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/plain.jpg" alt="team first">
-                            <span class="team-name">Lara Calder2</span>
-                            <span class="team-designation">CEO2</span>
-                        </a>
-                        <div class="modal fade" id="int-team-4" tabindex="-1" role="dialog" aria-labelledby="int-team-4Title" aria-hidden="true">
-                            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                                <div class="modal-content">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                    </button>
-                                <div class="modal-body">
-                                    <div class="team-wrap">
-                                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/plain.jpg" alt="team first">
-                                        <div class="team-desc">
-                                            <span class="team-name">Lara Calder2</span>
-                                            <span class="team-designation">CEO2</span>
-                                            <p>
-                                                2Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repreh enderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="team-block col-lg-2 col-6">
-                        <a href="#" data-toggle="modal" data-target="#int-team-5">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/plain.jpg" alt="team first">
-                            <span class="team-name">Lara Calder2</span>
-                            <span class="team-designation">CEO2</span>
-                        </a>
-                        <div class="modal fade" id="int-team-5" tabindex="-1" role="dialog" aria-labelledby="int-team-5Title" aria-hidden="true">
-                            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                                <div class="modal-content">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                    </button>
-                                <div class="modal-body">
-                                    <div class="team-wrap">
-                                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/plain.jpg" alt="team first">
-                                        <div class="team-desc">
-                                            <span class="team-name">Lara Calder2</span>
-                                            <span class="team-designation">CEO2</span>
-                                            <p>
-                                                2Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repreh enderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="team-block col-lg-2 col-6">
-                        <a href="#" data-toggle="modal" data-target="#int-team-6">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/plain.jpg" alt="team first">
-                            <span class="team-name">Lara Calder2</span>
-                            <span class="team-designation">CEO2</span>
-                        </a>
-                        <div class="modal fade" id="int-team-6" tabindex="-1" role="dialog" aria-labelledby="int-team-6Title" aria-hidden="true">
-                            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                                <div class="modal-content">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                    </button>
-                                <div class="modal-body">
-                                    <div class="team-wrap">
-                                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/plain.jpg" alt="team first">
-                                        <div class="team-desc">
-                                            <span class="team-name">Lara Calder2</span>
-                                            <span class="team-designation">CEO2</span>
-                                            <p>
-                                                2Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repreh enderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                </div>
+            <?php
+                $count++;
+                endwhile;
+                wp_reset_postdata();
+                ?>
             </div>
         </div>
-    </div>
+<?php } ?>
 
-
-
- <?php
-        //get_template_part( 'template-parts/home/content', 'letstalk' );?>
 
 <?php
-       // get_template_part( 'template-parts/home/content', 'copyright' );?>
+        get_template_part( 'template-parts/home/content', 'letstalk' );?>
 
-<?php 
+<?php
+        get_template_part( 'template-parts/home/content', 'copyright' );?>
+
+<?php
         get_footer(); ?>
 
 
