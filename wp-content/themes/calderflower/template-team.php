@@ -85,7 +85,7 @@ Template Name: Meet The Team
                     <a href="#" data-toggle="modal" data-target="#<?php echo $term->slug; ?>-<?php echo $count; ?>">
                          <img src="<?php echo $team_img_url;?>" alt="team first">
                           <span class="team-name"><?php the_title();?></span>
-                          <span class="team-designation"><?php get_field('team_designation');?></span>
+                          <span class="team-designation"><?php echo get_field('team_designation');?></span>
                     </a>
                     <div class="modal fade" id="<?php echo $term->slug; ?>-<?php echo $count; ?>" tabindex="-1" role="dialog" aria-labelledby="int-team-1Title" aria-hidden="true">
                         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
@@ -98,7 +98,7 @@ Template Name: Meet The Team
                                     <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/plain.jpg" alt="team first">
                                     <div class="team-desc">
                                         <span class="team-name"><?php the_title();?></span>
-                                        <span class="team-designation"><?php get_field('team_designation');?></span>
+                                        <span class="team-designation"><?php echo get_field('team_designation');?></span>
                                         <?php the_content();?>
                                     </div>
                                 </div>
