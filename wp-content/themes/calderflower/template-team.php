@@ -41,6 +41,7 @@ Template Name: Meet The Team
     ── ──────────────────────────────────────────────────────────
     ── -->
     <?php
+    $count_term = 0;
     $terms = get_terms(array(
         'taxonomy' => 'cfteam_type',
         'hide_empty' => true,
@@ -48,7 +49,11 @@ Template Name: Meet The Team
         'order' => 'DESC',
     ));
     foreach( $terms as $term ) {
+        if( $count_term == 1 ){
+           echo '<div id="interiors-block">';
+        }
     ?>
+
     <div class="container architecture-block">
         <div class="row no-gutters">
             <div class="col-lg-12 text-center">
@@ -110,7 +115,13 @@ Template Name: Meet The Team
                 ?>
             </div>
         </div>
-<?php } ?>
+
+<?php
+        if( $count_term == 1 ){
+           echo '</div>';
+        }
+
+$count_term++; } ?>
 
 
 <?php

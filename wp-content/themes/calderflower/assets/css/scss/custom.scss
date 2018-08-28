@@ -10,6 +10,7 @@
     .site-logo{
         width: 269px;
         height: 25px;
+        object-fit: contain;
     }
     .row{
         height: 70px;
@@ -372,7 +373,7 @@
             position: absolute;
             left: 50%;
             transform: translate(-50%, -50%);
-            bottom: -135px;
+            bottom: -125px;
             transition: .3s;
         }
     }
@@ -536,6 +537,9 @@
     #top-social li a{
         color: #fff;
         font-size: 18px;
+        .fa-instagram:before{
+            background-image: url(../img/new-instagram-icon-white.png);
+        }
     }
 }
 .copyright-block .footer-links {
@@ -673,7 +677,6 @@
         letter-spacing: 0.01em;
         font-weight: 600;
         height: 48px;
-        line-height: 48px;
         padding: 0;
         margin: 0;
         cursor: pointer;
@@ -681,7 +684,7 @@
         input~span:after {
             position: absolute;
             left: 0;
-            top: 14px;
+            top: 4px;
             content: "";
             background: transparent;
             width: 20px;
@@ -986,9 +989,6 @@
 
 // meet the team
 #meet-team-banner {
-    .right-top{
-        padding-left: 10px;
-    }
     .img-bottom {
         height: 219px;
         width: 50%;
@@ -1000,9 +1000,6 @@
     }
     .img-btm-wrap{
         display: flex;
-        .img-bottom:first-child{
-            padding-right: 10px;
-        }
     }
 }
 

@@ -3,7 +3,10 @@
 Template Name: Milestones
 */
  get_header();
-?>
+ while( have_posts() ) :
+    the_post();
+    $feature_img = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) );
+    ?>
 
     <!-- ──
     ── ──────────────────────────────────────────────────────────
@@ -13,16 +16,19 @@ Template Name: Milestones
     <div class="container project-banner" id="milestone-banner">
         <div class="row no-gutters">
             <div class="col-lg-4 projects-bnr-left">
-                <h1>Milestones</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+                <h1><?php the_title(); ?></h1>
+               	<?php the_content(); ?>
                 </div>
             <div class="col-lg-8">
-                <img class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/milestone-banner.jpg" alt="Projects">
+                <img class="img-fluid" src="<?php echo $feature_img; ?>" alt="<?php the_title();?>">
             </div>
         </div>
     </div>
 
+	<?php
+		endwhile;
+		wp_reset_postdata();
+		?>
     <!-- ──
     ── ──────────────────────────────────────────────────────────
     ──   ::::::Milestone timeline : :  :   :    :     :        :   :
@@ -32,18 +38,18 @@ Template Name: Milestones
         <div class="mil-filter">
                 <select id="project-area" class="selectric sel-white" tabindex="0">
                     <option value="">Filter milestones by category</option>
-                    <option value="architecture" class="case-studies">case studies</option>
-                    <option value="interiors"  class="awards">awards & Achievements</option>
-                    <option value="interiors"  class="cf-updates">cf updates</option>
-                    <option value="interiors"  class="articles">articles</option>
+                    <option value="case-studies" class="case-studies">case studies</option>
+                    <option value="awards"  class="awards">awards & Achievements</option>
+                    <option value="cf-updates"  class="cf-updates">cf updates</option>
+                    <option value="articles"  class="articles">articles</option>
                 </select>
         </div>
-    
+
         <section id="cd-timeline" class="cd-container cssanimations">
             <div class="cd-timeline-block case-studies">
                 <div class="cd-timeline-img cd-picture">
                 </div> <!-- cd-timeline-img -->
-    
+
                 <div class="cd-timeline-content">
                     <a href="#" class="milestone-blk">
                         <div class="mil-content">
@@ -55,11 +61,11 @@ Template Name: Milestones
                     </a>
                 </div> <!-- cd-timeline-content -->
             </div> <!-- cd-timeline-block -->
-    
+
             <div class="cd-timeline-block awards-ach">
                 <div class="cd-timeline-img cd-movie">
                 </div> <!-- cd-timeline-img -->
-    
+
                 <div class="cd-timeline-content">
                     <a href="#" class="milestone-blk">
                         <div class="mil-content">
@@ -71,11 +77,11 @@ Template Name: Milestones
                     </a>
                 </div> <!-- cd-timeline-content -->
             </div> <!-- cd-timeline-block -->
-            
+
             <div class="cd-timeline-block cf-updates">
                 <div class="cd-timeline-img cd-movie">
                 </div> <!-- cd-timeline-img -->
-    
+
                 <div class="cd-timeline-content">
                     <a href="#" class="milestone-blk">
                         <div class="mil-content">
@@ -87,11 +93,11 @@ Template Name: Milestones
                     </a>
                 </div> <!-- cd-timeline-content -->
             </div> <!-- cd-timeline-block -->
-            
+
             <div class="cd-timeline-block cf-updates">
                 <div class="cd-timeline-img cd-movie">
                 </div> <!-- cd-timeline-img -->
-    
+
                 <div class="cd-timeline-content">
                     <a href="#" class="milestone-blk">
                         <div class="mil-content">
@@ -103,11 +109,11 @@ Template Name: Milestones
                     </a>
                 </div> <!-- cd-timeline-content -->
             </div> <!-- cd-timeline-block -->
-    
+
             <div class="cd-timeline-block awards-ach">
                 <div class="cd-timeline-img cd-movie">
                 </div> <!-- cd-timeline-img -->
-    
+
                 <div class="cd-timeline-content">
                     <a href="#" class="milestone-blk">
                         <div class="mil-content">
@@ -119,11 +125,11 @@ Template Name: Milestones
                     </a>
                 </div> <!-- cd-timeline-content -->
             </div> <!-- cd-timeline-block -->
-    
+
             <div class="cd-timeline-block mil-articles">
                 <div class="cd-timeline-img cd-movie">
                 </div> <!-- cd-timeline-img -->
-    
+
                 <div class="cd-timeline-content">
                     <a href="#" class="milestone-blk">
                         <div class="mil-content">
@@ -135,11 +141,11 @@ Template Name: Milestones
                     </a>
                 </div> <!-- cd-timeline-content -->
             </div> <!-- cd-timeline-block -->
-            
+
             <div class="cd-timeline-block mil-articles">
                 <div class="cd-timeline-img cd-movie">
                 </div> <!-- cd-timeline-img -->
-    
+
                 <div class="cd-timeline-content">
                     <a href="#" class="milestone-blk">
                         <div class="mil-content">
@@ -151,11 +157,11 @@ Template Name: Milestones
                     </a>
                 </div> <!-- cd-timeline-content -->
             </div> <!-- cd-timeline-block -->
-    
+
             <div class="cd-timeline-block case-studies">
                 <div class="cd-timeline-img cd-picture">
                 </div> <!-- cd-timeline-img -->
-    
+
                 <div class="cd-timeline-content">
                     <a href="#" class="milestone-blk">
                         <div class="mil-content">
@@ -167,7 +173,7 @@ Template Name: Milestones
                     </a>
                 </div> <!-- cd-timeline-content -->
             </div> <!-- cd-timeline-block -->
-            
+
         </section>
     </div>
 
@@ -177,7 +183,7 @@ Template Name: Milestones
 <?php
        // get_template_part( 'template-parts/home/content', 'copyright' );?>
 
-<?php 
+<?php
         get_footer(); ?>
 
 
