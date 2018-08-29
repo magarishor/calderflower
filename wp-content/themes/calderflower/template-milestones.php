@@ -53,7 +53,7 @@ Template Name: Milestones
             </select>
         </div>
 
-        <section id="cd-timeline" class="cd-container cssanimations">
+        <section id="timeline-block" class="cd-container cssanimations">
     	<?php
 	          $args = array(
 	              'post_type'=>'milestone',
@@ -90,7 +90,7 @@ Template Name: Milestones
         </section>
     </div>
 
- <?php
+<?php
         get_template_part( 'template-parts/home/content', 'letstalk' );?>
 
 <?php

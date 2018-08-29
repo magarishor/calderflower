@@ -275,6 +275,34 @@ jQuery(function($) {
             }
         }
 
+    //milestone filter
+     $('#milestone').selectric().on('change', function() {
+         var timeline_cat = $('#milestone :selected').val();
+         timeline_ajax(timeline_cat);
+
+     });
+
+     function timeline_ajax( timeline_cat ){
+        $.ajax({
+             url: Calderobj.admin_ajax,
+             type: 'POST',
+             data: {
+                action: 'timeline_filter',
+                timeline_cat: timeline_cat
+            },
+         })
+         .done(function(response) {
+             console.log("success");
+             $("#timeline-block").html(response);
+         })
+         .fail(function() {
+             console.log("error");
+         })
+         .always(function() {
+             console.log("complete");
+         });
+     }
+
 
     // scroll down
     $(".toggle-filter").click(function() {

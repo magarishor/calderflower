@@ -45,7 +45,7 @@
             font-size: 18px;
             display: inline-block;
         }
-    }  
+    }
 }
 
 
@@ -61,16 +61,16 @@
         margin: 6px 0;
         transition: 0.3s;
     }
-    
+
     &.change .bar1 {
         -webkit-transform: rotate(-45deg) translate(-9px, 6px);
         transform: rotate(-45deg) translate(-9px, 6px);
     }
-    
+
     &.change .bar2 {
         opacity: 0;
     }
-    
+
     &.change .bar3 {
         -webkit-transform: rotate(45deg) translate(-4px, -2px);
         transform: rotate(45deg) translate(-4px, -2px);
@@ -94,7 +94,7 @@
                 letter-spacing: 0.01em;
                 font-weight: 300;
                 text-decoration: none;
-                padding-bottom: 9px; 
+                padding-bottom: 9px;
                 display: inline-block;
             }
         }
@@ -107,7 +107,7 @@
                 font-size: 21px;
                 letter-spacing: 0.01em;
                 font-weight: 500;
-                padding-left: 16px; 
+                padding-left: 16px;
                 i{
                     padding-right: 5px;
                     background: $primary-color;
@@ -131,7 +131,7 @@
             }
         }
     }
-    
+
 
     width: 315px;
     background: #293834;
@@ -166,7 +166,7 @@
     }
 }
 #top-social{
-        margin-bottom: 0;    
+        margin-bottom: 0;
         li{
             list-style: none;
             display: inline-block;
@@ -238,7 +238,7 @@
             }
         }
     }
-    
+
     .right-btm-sldr {
         display: flex;
         .bnr-page-blk {
@@ -261,13 +261,13 @@
                 opacity: 0.9;
             }
             &.bnr-projects{
-                background-image: url(../img/view-projects.jpg); 
+                background-image: url(../img/view-projects.jpg);
             }
             &.bnr-team{
-                background-image: url(../img/meet-team.jpg); 
+                background-image: url(../img/meet-team.jpg);
             }
             &.bnr-news{
-                background-image: url(../img/read-team.jpg); 
+                background-image: url(../img/read-team.jpg);
             }
             &:not(:last-child){
                 margin-right: 10px;
@@ -377,7 +377,7 @@
             transition: .3s;
         }
     }
-       
+
 }
 
 // form map
@@ -427,7 +427,7 @@
         padding: 48px 66px;
         ul{
           list-style: none;
-          padding-left: 0; 
+          padding-left: 0;
           li{
               min-height: 55px;
           }
@@ -870,7 +870,7 @@
             width: 100%;
             height: 400px;
             object-fit: cover;
-    
+
         }
     }
 }
@@ -904,7 +904,7 @@
     background: url(../img/fancy-close.png);
     top: -20px;
     right: -40px;
-    background-color: $primary-color !important; 
+    background-color: $primary-color !important;
 }
 
 .project-single-banner {
@@ -1052,7 +1052,7 @@ button.close {
         letter-spacing: 0.01em;
         font-weight: 300;
         color: #333333;
-        display: block;   
+        display: block;
         &:hover{
             color: #333333;
         }
@@ -1197,7 +1197,7 @@ button.close {
 .cd-timeline-block {
     &.case-studies {
         .cd-timeline-img{
-            background-image: url(../img/case-studies.svg);  
+            background-image: url(../img/case-studies.svg);
         }
         .milestone-blk:before {
             content: "Case studies";
@@ -1206,7 +1206,7 @@ button.close {
             bottom: 36%;
         }
     }
-    &.awards-ach {
+    &.awards {
         .milestone-blk:after{
              background: #235e4d;
         }
@@ -1241,7 +1241,7 @@ button.close {
             bottom: 30%;
         }
     }
-    &.mil-articles {
+    &.articles {
         .milestone-blk:after{
              background: #8bcda5;
         }
@@ -1316,7 +1316,7 @@ button.close {
                 background: #fafafa;
             }
             &:before{
-                content: "";              
+                content: "";
                 width: 40px;
                 height: 100%;
                 display: inline-block;
@@ -1327,7 +1327,7 @@ button.close {
                 top: 0;
                 background-repeat: no-repeat;
                 background-position: center;
-            }     
+            }
             &:first-child {
                 display: none;
             }

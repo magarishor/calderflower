@@ -15,6 +15,7 @@ $cf_includes = array(
 	'inc/social-icon.php',
 	'inc/project-ajax-filter.php',
 	'inc/project-load-more.php',
+	'inc/milestone-ajax-filter.php',
 	'inc/admin/init.php',
 
 );
