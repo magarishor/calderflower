@@ -1,4 +1,5 @@
 <?php
+
 // Custom post type - team.
 class CF_Type_Milestone {
 

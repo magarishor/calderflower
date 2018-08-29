@@ -278,6 +278,7 @@ jQuery(function($) {
     //milestone filter
      $('#milestone').selectric().on('change', function() {
          var timeline_cat = $('#milestone :selected').val();
+         $("#timeline-block").css("opacity", 0.5);
          timeline_ajax(timeline_cat);
 
      });
@@ -294,6 +295,7 @@ jQuery(function($) {
          .done(function(response) {
              console.log("success");
              $("#timeline-block").html(response);
+             $("#timeline-block").css("opacity", 1);
          })
          .fail(function() {
              console.log("error");
