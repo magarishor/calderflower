@@ -1,42 +1,20 @@
 <?php
-/*
-Template Name: Milestones
-*/
- get_header();
- while( have_posts() ) :
-    the_post();
-    $feature_img = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) );
-    ?>
+/* Template Name: Milestones */
 
-    <!-- ──
-    ── ──────────────────────────────────────────────────────────
-    ──   ::::::Milestone  Wrap : :  :   :    :     :        :   :
-    ── ──────────────────────────────────────────────────────────
-    ── -->
-    <div class="container project-banner" id="milestone-banner">
-        <div class="row no-gutters">
-            <div class="col-lg-4 projects-bnr-left">
-                <h1><?php the_title(); ?></h1>
-               	<?php the_content(); ?>
-                </div>
-            <div class="col-lg-8">
-                <img class="img-fluid" src="<?php echo $feature_img; ?>" alt="<?php the_title();?>">
-            </div>
-        </div>
-    </div>
+get_header();
 
-	<?php
-		endwhile;
-		wp_reset_postdata();
-		?>
+if ( have_posts() ) :
+    while ( have_posts() ) :
+        the_post();
+        get_template_part( 'template-parts/milestone/content', 'milestone' );
+        get_template_part( 'template-parts/home/content', 'letstalk' );
+        get_template_part( 'template-parts/home/content', 'copyright' );
+    endwhile;
 
-<?php get_template_part( 'template-parts/milestone/content', 'milestone' ); ?>
+else :
 
-<?php get_template_part( 'template-parts/home/content', 'letstalk' ); ?>
+    get_template_part( 'template-parts/content', 'none' );
 
-<?php get_template_part( 'template-parts/home/content', 'copyright' ); ?>
+endif;
 
-<?php get_footer(); ?>
-
-
-
+get_footer(); ?>
